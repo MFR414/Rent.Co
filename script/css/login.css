@@ -1,0 +1,12 @@
+.col-sm-7 {
+    background-image : url('reg.jpeg');
+    position: fixed; 
+    top: 0;
+    height: 700px;
+
+}
+.col-sm-5{
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+}
