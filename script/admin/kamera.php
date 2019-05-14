@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html"></a>
+    <a class="navbar-brand mr-1" href="index.php"></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -63,7 +63,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -98,13 +98,7 @@
           <li class="breadcrumb-item active">Kamera</li>
         </ol>
 
-        <?php
-          include 'koneksi.php';
-          $sql= "SELECT * FROM kamera ";
-          $result = mysqli_query($mysqli,$sql);
-          while($rows = mysqli_fetch_array($result))
-          {
-        ?>
+        
         <!-- Table Penyewa-->
         <div class="card mb-3">
           <div class="card-header">
@@ -130,6 +124,13 @@
                       <th rowspan="1" colspan="1">Status Kamera</th>
                     </thead>
                     </tfoot>
+                    <?php
+                      include 'koneksi.php';
+                      $sql= "SELECT * FROM kamera ";
+                      $result = mysqli_query($mysqli,$sql);
+                      while($rows = mysqli_fetch_array($result))
+                      {
+                    ?>
                     <tbody>
                     <tr role="row" class="odd">
                         <td class="sorting_1"><?php echo $rows['id_kamera']?></td>
@@ -143,6 +144,7 @@
                         <td><?php echo $rows['status_kamera']?></td>
                     </tr> 
                     </tbody>
+                    <?php } ?>
                   </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
                 </div>
               </div>
@@ -151,9 +153,7 @@
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
-        <?php } ?>
-
-        
+                
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">

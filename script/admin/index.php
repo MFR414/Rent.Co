@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand" href="index.php">
-      <img src="../gambar/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
+      <img src="../gambar/logo-3.png" width="170" height="50" class="d-inline-block align-top" alt="">
     </a>
 
     <!-- Navbar Search -->
@@ -60,7 +60,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -151,7 +151,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
+            <span>Copyright © Rent.co 2019</span>
           </div>
         </div>
       </footer>
