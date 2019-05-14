@@ -20,6 +20,9 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
 
+  <!--javascript-->
+  
+
 </head>
 
 <body id="page-top">
@@ -27,7 +30,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand" href="index.php">
-      <img src="./gambar/tampilan/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
+      <img src="./gambar/tampilan/logo-3.png" width="170" height="50" class="d-inline-block align-top" alt="">
     </a>
 
     <!-- Navbar Search -->
@@ -42,6 +45,7 @@
       </div>
     </form>
   </nav>
+  <!--navbar search-->
 
   <div id="wrapper">
 
@@ -55,7 +59,7 @@
         </li>
         
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -67,7 +71,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="listkamera.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Kamera</span></a>
       </li>
@@ -143,7 +147,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="login.php">Logout</a>
         </div>
       </div>
     </div>

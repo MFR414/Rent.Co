@@ -7,8 +7,12 @@
     <title>Rent.Co - Profil</title>
     <!--css-->
     <link href="css/profile.css" rel="stylesheet">
+    <!--icon-->
+    <link rel="shortcut icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
+    <link rel="icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
 
 </head>
+
 <body>
     <div class="container portfolio">
         <div class="bio-info">
@@ -24,9 +28,20 @@
                 </div>
                 <div class="col-md-6">
                     <div class="bio-content">
-                        <h1>Hi there, I'm Kshiti</h1>
-                        <h6>I am a fresh web designer and I create custom web designs. I'm skilled at writing well-designed, testable and efficient code using current best practices in Web development. I'm a fast learner, hard worker and team player who is proficient in making creative and innovative web pages.</h6>
-                        <p>P.S I have no special talent, I'm just passionately curious ;)</p>
+                        <h1>Hi, Saya (username)</h1>
+                        <h6>Email</h6>
+                        <h4>(ini email)</h4>
+                        <h6>No. Telepon</h6>
+                        <h4>(ini nomor telepon)</h4>
+                        <p>Foto</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="" alt="Card image cap">
+                                </div>
+                                <h6>foto KTP</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>	

@@ -69,9 +69,9 @@
 
 </head>
 <body>
-
+<!--awal navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff;"> <!--"navbar navbar-dark bg-primary"(warna bitu langit)   "navbar navbar-light" style="background-color: #e3f2fd;"(ganti warna lain)  "navbar navbar-dark bg-dark"(warna hitam)-->
-        <a href="index.php">
+        <a href="main-page.php">
             <img src="../gambar/logo-3.png" width="130"height="45"><img>
         </a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -80,10 +80,12 @@
             </button>
             <div class="search-bar">
                 <div class="input-group mb-3">
-              <form action="#">
+                <form action="#">
                     <input type="text" class="form-control" style="width: 920px !important;" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" >
-                  </form>     
-                    <a class="btn btn-outline-dark" type="button" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </form>     
+                    <a class="btn btn-outline-dark" type="button" href="#">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
                          
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,8 +94,8 @@
                             Hello user!
                         </div>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Lihat profil</button>
-                            <button class="dropdown-item" type="button">Keluar</button>
+                            <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
+                            <a class="dropdown-item" >Keluar</a>
                         </div>
                     </div>
                 </div>

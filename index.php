@@ -1,4 +1,4 @@
-/<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
@@ -59,7 +59,7 @@
 
    <!-- home
    ================================================== -->
-   <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="./gambar/awal/9.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+   <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="./gambar/awal/8.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
@@ -195,12 +195,12 @@
             </div>
             <div class="row about-content about-content--buttons">
 
-                <div class="col-full">
-                    <a href="script/register1.php" class="btn btn--primary full-width">Daftar</a>
+                <div class="col-six tab-full left">
+                    <a href="./script/register1_penyewa.php" class="btn btn--primary full-width">Daftar sebagai penyewa</a>
                 </div>
-                <!--<div class="col-six tab-full right">
-                    <a href="script/php/register.php" class="btn full-width">Daftar sebagai peminjam</a>
-                </div>-->
+                <div class="col-six tab-full right">
+                    <a href="./script/pemilik/register1_pemilik.php" class="btn full-width">Daftar sebagai peminjam</a>
+                </div>
 
             </div> 
         </div>
@@ -224,13 +224,13 @@
                 <h3>Feedback</h3><br><br>
                 <h1>Hello Users!</h1>
                 
-                <p class="lead">Masukkan kritik dan saran anda. Kritik dan saran dari anda sangat berarti bafi kami.</p>
+                <p class="lead">Masukkan kritik dan saran anda. Kritik dan saran dari anda sangat berarti bagi kami.</p>
             </div>
         </div>
 
         <div class="row contact__main">
-            <!--<div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="">
+           <!-- <div class="col-eight tab-full contact__form">
+                <<form name="contactForm" id="contactForm" method="post" action="">
                     <fieldset>
     
                     <div class="form-field">
@@ -270,7 +270,7 @@
                     Pesan telah terkirim, terima kasih...<br>
                 </div>
                         
-            </div>-->
+            </div>
             <div class="col-four tab-full contact__infos">
                 <h4 class="h06">Telepon</h4>
                 <p> (+62)823 5555 1212<br></p>
@@ -286,8 +286,23 @@
                 Jawa Timur
                 65165
                 </p>
-            </div>
+            </div>-->
+            <div class="col-full tab-full contact__infos">
+                <h4 class="h06">Telepon</h4>
+                <p> (+62)823 5555 1212<br></p>
 
+                <h4 class="h06">Email</h4>
+                <p>rent.co@gmail.com<br>
+                </p>
+
+                <h4 class="h06">Alamat</h4>
+                <p>
+                Jl. Raya Bakalan<br>
+                Bululawang, Kab. Malang<br>
+                Jawa Timur
+                65165
+                </p>
+            </div>
         </div>
 
     </section> <!-- end s-contact -->
@@ -295,8 +310,8 @@
 
     <!-- footer
     ================================================== -->
-    <footer>
-        <div class="row">
+    <footer style="background-color:black;">
+        <div class="row" >
             <div class="col-full">
 
                 <div class="footer-logo">
