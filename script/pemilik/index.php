@@ -26,7 +26,12 @@
 </head>
 
 <body id="page-top">
-
+  <?php 
+  session_start();
+  if($_SESSION['user']==''){
+    header("location:login_pemilik.php");
+  }
+  ?>
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand" href="index.php">
@@ -55,7 +60,7 @@
             <div class="profil" style="margin-left:27%;">
                 <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
             </div>
-            <p style="color:white; text-align: center;">nama user</p>
+            <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
         </li>
         
       <li class="nav-item active">
