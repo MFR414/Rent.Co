@@ -18,6 +18,11 @@
 <body>
     <?php
     include "koneksi.php";
+    session_start();
+    if($_SESSION['user']==''){
+      header("location:login_pemilik.php");
+    }
+    $id=$_SESSION["id_user"];
 
     if(isset($_POST['simpan'])){
       $merk = $_POST['merk'];
@@ -26,12 +31,18 @@
       $kondisi = $_POST['kondisi'];
       $harga = $_POST['harga'];
       $status = $_POST['status'];
-      $foto = $_POST['foto'];
+      $filetmp = $_FILES['foto']['tmp_name'];
+      $filename = $_FILES['foto']['name'];
+      $filepath = "Rent.Co/gambar/kamera/".$filename;
+      move_uploaded_file($filetmp,$filepath);
 
-      $sql = "INSERT INTO kamera SET merek_kamera='$merk',
+      $sql = "INSERT INTO kamera SET id_pemilik ='$id',merek_kamera='$merk',
               seri_kamera='$seri',spesifikasi_kamera='$spek',kondisi_kamera='$kondisi'
-              ,harga_sewa='$harga',status_kamera='$status'";
+              ,harga_sewa='$harga',status_kamera='$status',gambar_kamera='$filename'";
       $result = mysqli_query($mysqli,$sql);
+      if($result){
+        echo "Data Berhasil Dimasukkan";
+      }
     }
     ?>
 
@@ -124,11 +135,11 @@
                       <input type="text" id="form8" class="form-control" name="status">
                   </div><br>
                   <div class="md-form">
-                      <label for="form9">Foto profil</label>
+                      <label for="form9">Foto Kamera</label>
                       <input type="file" id="form9" accept="image/png, image/jpeg" name="foto">
                   </div><br>
         <div class="text-center mt-4">
-        <input class="submit" name="simpan" type="submit" value="Simpan">
+        <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>
         </div>
         </div>
         </div>

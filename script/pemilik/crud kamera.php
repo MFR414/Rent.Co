@@ -116,55 +116,38 @@
                     <thead>
                       <tr role="row">
                         <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 101px;">Merk kamera</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 163px;">Tipe</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 71px;">Tahun</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Deskripsi</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 66px;">Spesifikasi</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 58px;">Harga</th></tr>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 58px;">foto</th></tr>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 58px;">Harga</th></tr>
-
-                      </thead>
-                    <tfoot>
-                      <tr>
-                        <th rowspan="1" colspan="1">Merk kamera</th>
-                        <th rowspan="1" colspan="1">Tipe</th>
-                        <th rowspan="1" colspan="1">Tahun</th>
-                        <th rowspan="1" colspan="1">Deskripsi</th>
-                        <th rowspan="1" colspan="1">Spesifikasi</th>
-                        <th rowspan="1" colspan="1">Harga</th>
-                        <th rowspan="1" colspan="1">Foto</th>
-                        <th rowspan="1" colspan="1"></th>
-                      </tr>
-                    </tfoot>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 163px;">Seri kamera</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 71px;">Spesifikasi kamera</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">Kondisi kamera</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 66px;">Harga Sewa</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 58px;">Foto Kamera</th></tr>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 58px;">Status</th></tr>
+                    </thead>
+                    <?php
+                      include "koneksi.php";$id=$_SESSION["id_user"];
+                      $sql= "SELECT * FROM kamera WHERE id_pemilik = '$id'";
+                      $result = mysqli_query($mysqli,$sql);
+                      while($rows = mysqli_fetch_array($result))
+                        {
+                    ?>
                     <tbody>
                     <tr role="row" class="odd">
-                        <td class="sorting_1">Canon</td>
-                        <td>123</td>
-                        <td>2018</td>
-                        <td>ini kamera canon</td>
-                        <td>ini spesifikasi</td>
-                        <td>50.000/hari</td>
-                        <td>gambar</td>
-                        <td>
-                          <a button class="btn btn-class-success">Ubah</a>
-                          <a button class="btn btn-class-warning">Hapus</a>
-                        </td>
-                      </tr>
-                      </tr><tr role="row" class="odd">
-                        <td class="sorting_1">Samsung</td>
-                        <td>123</td>
-                        <td>2017</td>
-                        <td>ini kamera samsung</td>
-                        <td>ini spesifikasi</td>
-                        <td>80.000/hari</td>
-                        <td>gambar</td>
+                        <td class="sorting_1"><?php echo $rows['merek_kamera']?></td>
+                        <td><?php echo $rows['seri_kamera']?></td>
+                        <td><?php echo $rows['spesifikasi_kamera']?></td>
+                        <td><?php echo $rows['kondisi_kamera']?></td>
+                        <td><?php echo $rows['harga_sewa']?></td>
+                        <td><?php echo $rows['gambar_kamera']?></td>
+                        <td><?php echo $rows['status_kamera']?></td>
                         <td>
                           <a button class="btn btn-class-success">Ubah</a>
                           <a button class="btn btn-class-warning">Hapus</a>
                         </td>
                       </tr>
                     </tbody>
+                    <?php
+                        }
+                    ?>
                   </table>
                 </div>
               </div>

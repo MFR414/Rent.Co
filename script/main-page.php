@@ -69,6 +69,12 @@
 
 </head>
 <body>
+    <?php 
+    session_start();
+    if($_SESSION['user']==''){
+        header("location:login_penyewa.php");
+    }
+    ?>
 <!--awal navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff;"> <!--"navbar navbar-dark bg-primary"(warna bitu langit)   "navbar navbar-light" style="background-color: #e3f2fd;"(ganti warna lain)  "navbar navbar-dark bg-dark"(warna hitam)-->
         <a href="main-page.php">

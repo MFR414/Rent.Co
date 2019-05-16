@@ -55,6 +55,7 @@
                       if($check>0){
                         $row=mysqli_fetch_array($result);
                         $_SESSION["user"] = $row['username'];
+                        $_SESSION["id_user"] = $row['id_pemilik'];
                         header("location:index.php");
                       }else{
                         header("location:login_pemilik.php");

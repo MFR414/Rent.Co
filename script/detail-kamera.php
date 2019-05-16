@@ -1,5 +1,9 @@
 <?php
     include "koneksi.php";
+    session_start();
+    if($_SESSION['user']==''){
+        header("location:login_penyewa.php");
+    }
 
     $sql="SELECT * FROM kamera k INNER JOIN pemilik_kamera pk ON k.id_pemilik = pk.id_pemilik WHERE id_kamera = '$_GET[submit]'";
     $result = mysqli_query($mysqli,$sql);

@@ -89,7 +89,8 @@
 
     <?php
     include "koneksi.php";
-    $sql= "SELECT * FROM kamera WHERE id_pemilik = 1 ";
+    $id=$_SESSION["id_user"];
+    $sql= "SELECT * FROM kamera WHERE id_pemilik = '$id'";
     $result = mysqli_query($mysqli,$sql);
     while($rows = mysqli_fetch_array($result))
         {
