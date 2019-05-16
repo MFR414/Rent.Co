@@ -12,7 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  </head>
+</head>
 <body aria-busy="true">
   <!-- Main navigation -->
   <header>  
@@ -43,26 +43,7 @@
                     <h3 class="white-text">Login</h3>
                     <hr class="hr-light" style="background-color:white;">
                   </div>
-                  <?php
-                    include "koneksi.php";
-                    session_start();
-                    if(isset($_POST['submit']) && !empty($_POST['username']) && !empty($_POST['password'])){
-                      $user=$_POST['username'];
-                      $pass=$_POST['password'];
-                      $sql = "SELECT * FROM penyewa WHERE username='$user' AND password='$pass' ";
-                      $result = mysqli_query($mysqli,$sql);
-                      $check=mysqli_num_rows($result);
-                      if($check>0){
-                        $row=mysqli_fetch_array($result);
-                        $_SESSION["user"] = $row['username'];
-                        header("location:main-page.php");
-                      }else{
-                        header("location:login_penyewa.php");
-                      }
-                    }
-                  ?>
                   <!--Body-->
-                  <form method="POST">
                   <div class="md-form">
                     <label for="form3" class="" style="color:white;" >Username</label>
                     <i class="fas fa-user prefix white-text active"></i>
@@ -72,7 +53,7 @@
                     <label for="form4" style="color:white;">Password</label>
                     <input type="text" id="form4" class="white-text form-control" name="password" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
-                  <!--<p style="color:white;">Masuk sebagai :</p>
+                  <p style="color:white;">Masuk sebagai :</p>
                   <div class="sel sel--black-panther">
                         <select name="select-profession" id="select-profession" style=" background-color:rgba(255,255,255,0.1); color:white;" >
                             <option value="" disabled style="color:black;">--Pilih--</option>
@@ -80,9 +61,9 @@
                             <option value="penyewa" style="color:black;">Penyewa kamera</option>
                             <option value="admin" style="color:black;">Admin</option>
                         </select>
-                    </div>-->
+                    </div>
                   <div class="text-center mt-4">
-                    <button class="btn btn-dark waves-effect waves-light" style="color:white;" name="submit">Login</button>
+                    <a button class="btn btn-dark waves-effect waves-light" name="submit">Login</a>
                   </div>
                 </div>
               </div>

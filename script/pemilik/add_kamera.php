@@ -14,9 +14,26 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-
 </head>
 <body>
+    <?php
+    include "koneksi.php";
+
+    if(isset($_POST['simpan'])){
+      $merk = $_POST['merk'];
+      $seri = $_POST['seri'];
+      $spek = $_POST['spek'];
+      $kondisi = $_POST['kondisi'];
+      $harga = $_POST['harga'];
+      $status = $_POST['status'];
+      $foto = $_POST['foto'];
+
+      $sql = "INSERT INTO kamera SET merek_kamera='$merk',
+              seri_kamera='$seri',spesifikasi_kamera='$spek',kondisi_kamera='$kondisi'
+              ,harga_sewa='$harga',status_kamera='$status'";
+      $result = mysqli_query($mysqli,$sql);
+    }
+    ?>
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -76,6 +93,7 @@
       <div class="container-fluid">
 
         <!-- Area Chart Example-->
+        <form method="POST">
         <div class="card mb-3">
               <div class="card-body">
                     <div class="row">
@@ -83,42 +101,41 @@
                       <div class="form-inline" action="#">
                   <div class="md-form">
                       <label for="form3" class="" >Merk kamera</label>
-                      <input type="text" id="form3" class="form-control" >
+                      <input type="text" id="form3" class="form-control" name="merk" >
                   </div><br>
                   <div class="md-form">
-                      <label for="form4" >Tipe</label>
-                      <input type="email" id="form4" class="form-control" >
+                      <label for="form4" >Seri Kamera</label>
+                      <input type="text" id="form4" class="form-control" name="seri" >
                   </div><br>
                   <div class="md-form">
-                      <label for="form5">Tahun</label>
-                      <input type="number" id="form5" class="form-control" >
+                      <label for="form7">Spesifikasi Kamera</label>
+                      <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"></textarea>
                   </div><br>
                   <div class="md-form">
-                      <label for="form6">Deskripsi</label>
-                      <textarea class="form-control" id="deskripsiTextArea" rows="3"></textarea>
+                      <label for="form6">Kondisi Kamera</label>
+                      <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"></textarea>
                   </div><br>
                   <div class="md-form">
-                      <label for="form7">Spesifikasi</label>
-                      <textarea class="form-control" id="SpekTextArea" rows="3"></textarea>
+                      <label for="form5">Harga Sewa</label>
+                      <input type="text" id="form5" class="form-control" name="harga">
                   </div><br>
                   <div class="md-form">
-                      <label for="form8">Harga</label>
-                      <input type="email" id="form8" class="form-control" >
+                      <label for="form8">Status Kamera</label>
+                      <input type="text" id="form8" class="form-control" name="status">
                   </div><br>
                   <div class="md-form">
                       <label for="form9">Foto profil</label>
-                      <input type="file" id="form9" accept="image/png, image/jpeg">
+                      <input type="file" id="form9" accept="image/png, image/jpeg" name="foto">
                   </div><br>
-
         <div class="text-center mt-4">
-            <a button class="btn btn-primary" href="#">Tambah Kamera</a>
+        <input class="submit" name="simpan" type="submit" value="Simpan">
         </div>
         </div>
         </div>
         </div>
         </div>
       </div>
-
+      </form>
     </div>
     <!-- /.content-wrapper -->
 

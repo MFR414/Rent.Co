@@ -104,62 +104,41 @@
                     <thead>
                       <tr role="row">
                         <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 60px;">Merk kamera</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 50px;">Tipe</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">Tahun</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 100px;">Deskripsi</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 50px;">Seri</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">Harga</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 100px;">Kondisi</th>
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 80px;">Spesifikasi</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Harga</th>
+                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Status</th>
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Foto</th>
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 110px;"></th>
                       </tr>
                     </thead>
+                    <?php
+                      include "koneksi.php";
+                      $sql= "SELECT * FROM kamera WHERE id_pemilik = 1 ";
+                      $result = mysqli_query($mysqli,$sql);
+                      while($rows = mysqli_fetch_array($result))
+                        {
+                    ?>
                     <tbody>
                     <tr role="row" class="odd">
-                        <td class="sorting_1">Canon</td>
-                        <td>123</td>
-                        <td>2018</td>
-                        <td>ini kamera canon</td>
-                        <td>ini spesifikasi</td>
-                        <td>50.000/hari</td>
-                        <td>gambar</td>
+                        <td class="sorting_1"><?php echo $rows['merek_kamera']?></td>
+                        <td><?php echo $rows['seri_kamera']?></td>
+                        <td><?php echo $rows['harga_sewa']?></td>
+                        <td><?php echo $rows['kondisi_kamera']?></td>
+                        <td><?php echo $rows['spesifikasi_kamera']?></td>
+                        <td><?php echo $rows['status_kamera']?></td>
+                        <td><img class="card-img-top" src="../Rent.Co/gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg"></td>
                         <td>
                           <a href="#" class="btn-sm btn-warning"><strong>Read</strong></a>
                           <a href="#" class="btn-sm btn-success"><strong>Edit</strong></a>
                           <a href="#" class="btn-sm btn-danger"><strong>Delete</strong></a>
                         </td>
-                      </tr>
-                      </tr>
-
-                      <tr role="row" class="odd">
-                          <td class="sorting_1">Canon</td>
-                          <td>123</td>
-                          <td>2018</td>
-                          <td>ini kamera canon</td>
-                          <td>ini spesifikasi</td>
-                          <td>50.000/hari</td>
-                          <td>gambar</td>
-                          <td>
-                            <a href="#" class="btn-sm btn-warning"><strong>Read</strong></a>
-                            <a href="#" class="btn-sm btn-success"><strong>Edit</strong></a>
-                            <a href="#" class="btn-sm btn-danger"><strong>Delete</strong></a>
-                          </td>
-                      </tr>
-                      
-                      <tr role="row" class="even">
-                          <td class="sorting_1">Canon</td>
-                          <td>123</td>
-                          <td>2018</td>
-                          <td>ini kamera canon</td>
-                          <td>ini spesifikasi</td>
-                          <td>50.000/hari</td>
-                          <td>gambar</td>
-                          <td>
-                            <a href="#" class="btn-sm btn-warning"><strong>Read</strong></a>
-                            <a href="#" class="btn-sm btn-success"><strong>Edit</strong></a>
-                            <a href="#" class="btn-sm btn-danger"><strong>Delete</strong></a>
-                          </td>
-                      </tr>
+                      </tr>                    
                     </tbody>
+                    <?php
+                        }
+                    ?>
                   </table>
                 </div>
               </div>
