@@ -70,7 +70,7 @@
                   </div><br>
                   <div class="md-form">
                     <label for="form4" style="color:white;">Password</label>
-                    <input type="text" id="form4" class="white-text form-control" name="password" style=" color:white; background-color:rgba(255,255,255,0);">
+                    <input type="password" id="form4" class="white-text form-control" name="password" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
                   <!--<p style="color:white;">Masuk sebagai :</p>
                   <div class="sel sel--black-panther">

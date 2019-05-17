@@ -75,7 +75,7 @@
                 </h1>
 
                 <div class="home-content__buttons">
-                    <a href="script/login-all.php" class="btn btn--primary full-width">
+                    <a href="script/login_penyewa.php" class="btn btn--primary full-width">
                         Login
                     </a>
                 </div>

@@ -101,7 +101,7 @@
                         </div>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
-                            <a class="dropdown-item" >Keluar</a>
+                            <a class="dropdown-item" href="logout.php">Keluar</a>
                         </div>
                     </div>
                 </div>
