@@ -17,7 +17,7 @@
   <!-- Main navigation -->
   <header>  
     <!-- Full Page Intro -->
-    <div class="view" style="background-image: url('../gambar/awal/10-edit.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="view" style="background-image: url('./gambar/tampilan/10-edit.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <!-- Mask & flexbox options-->
       <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
         <!-- Content -->
@@ -30,7 +30,7 @@
               <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; background-color:white;">
               <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Dan temukan kamera pilihan anda dengan merk yang bervariasi.</h6>
               <a class="tulisan" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Belum punya akun? <a href="#" style="color:white;">Klik disini!</a></a><br><br>
-              <a button class="btn btn-outline-light" href="../index.php" style="color:white">Kembali</a>
+              <a button class="btn btn-outline-light" href="../../index.php" style="color:white">Kembali</a>
             </div>
             <!--Grid column-->
             <!--Grid column-->

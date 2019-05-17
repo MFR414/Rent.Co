@@ -95,7 +95,7 @@
                 <a href="#"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
             </li>
             <li>
-                <a href="#"><i class="im im-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                <a href="#"><i class="im im-twitter" aria-hidden="true"></i><span>Twitter</span></a>
             </li>
             <li>
                 <a href="#"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
