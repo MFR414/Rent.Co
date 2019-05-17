@@ -31,8 +31,8 @@
       $kondisi = $_POST['kondisi'];
       $harga = $_POST['harga'];
       $status = $_POST['status'];
-      $filetmp = $_FILES['foto']['tmp_name'];
-      $filename = $_FILES['foto']['name'];
+      $filetmp = $_FILES['gbr-kamera']['tmp_name'];
+      $filename = $_FILES['gbr-kamera']['name'];
       $filepath = "Rent.Co/gambar/kamera/".$filename;
       move_uploaded_file($filetmp,$filepath);
 
@@ -136,7 +136,7 @@
                   </div><br>
                   <div class="md-form">
                       <label for="form9">Foto Kamera</label>
-                      <input type="file" id="form9" accept="image/png, image/jpeg" name="foto">
+                      <input type="file" name="gbr-kamera">
                   </div><br>
         <div class="text-center mt-4">
         <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>

@@ -58,7 +58,8 @@
                         $_SESSION["id_user"] = $row['id_pemilik'];
                         header("location:index.php");
                       }else{
-                        header("location:login_pemilik.php");
+                        $message = "Login Unsuccesfull";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                       }
                     }
                   ?>

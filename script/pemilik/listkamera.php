@@ -122,7 +122,8 @@
                     </thead>
                     <?php
                       include "koneksi.php";
-                      $sql= "SELECT * FROM kamera WHERE id_pemilik = 1 ";
+                      $id=$_SESSION["id_user"];
+                      $sql= "SELECT * FROM kamera WHERE id_pemilik = '$id' ";
                       $result = mysqli_query($mysqli,$sql);
                       while($rows = mysqli_fetch_array($result))
                         {
@@ -137,9 +138,11 @@
                         <td><?php echo $rows['status_kamera']?></td>
                         <td><img class="card-img-top" src="../Rent.Co/gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg"></td>
                         <td>
-                          <a href="#" class="btn-sm btn-warning"><strong>Read</strong></a>
-                          <a href="#" class="btn-sm btn-success"><strong>Edit</strong></a>
-                          <a href="#" class="btn-sm btn-danger"><strong>Delete</strong></a>
+                          <button href="#" class="btn-sm btn-warning"><strong>Read</strong></button>
+                          <button href="#" class="btn-sm btn-success"><strong>Edit</strong></button>
+                          <form action="delete-kamera.php" method="GET">
+                            <button type = "submit" class="btn-sm btn-danger" name="submit" value="<?php echo $rows['id_kamera']?>"><strong>Delete</strong></button>
+                          </form>
                         </td>
                       </tr>                    
                     </tbody>

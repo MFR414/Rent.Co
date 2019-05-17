@@ -13,7 +13,9 @@
   session_start();
   if($_SESSION['user']==''){
     header("location:login_pemilik.php");
-  }  
+  }
+  include "koneksi.php";
+    
 ?>
 <body>
     <div class="container portfolio">
