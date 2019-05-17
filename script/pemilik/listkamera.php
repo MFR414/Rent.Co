@@ -136,7 +136,7 @@
                         <td><?php echo $rows['kondisi_kamera']?></td>
                         <td><?php echo $rows['spesifikasi_kamera']?></td>
                         <td><?php echo $rows['status_kamera']?></td>
-                        <td><img class="card-img-top" src="../Rent.Co/gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg"></td>
+                        <td><?php echo $rows['gambar_kamera']?></td>
                         <td>
                           <button href="#" class="btn-sm btn-warning"><strong>Read</strong></button>
                           <button href="#" class="btn-sm btn-success"><strong>Edit</strong></button>

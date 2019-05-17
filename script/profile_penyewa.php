@@ -12,7 +12,9 @@
     <link rel="icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
 
 </head>
-
+<?php
+    include "koneksi.php";
+?>
 <body>
     <div class="container portfolio">
         <div class="bio-info">
