@@ -9,6 +9,12 @@
     <link href="css/profile.css" rel="stylesheet">
 
 </head>
+<?php
+  session_start();
+  if($_SESSION['user']==''){
+    header("location:login_pemilik.php");
+  }  
+?>
 <body>
     <div class="container portfolio">
         <div class="bio-info">

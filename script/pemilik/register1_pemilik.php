@@ -39,7 +39,7 @@
                 <div class="card-body">
                   <!--Header-->
                   <div class="text-center" style="color:white;">
-                    <h3 class="white-text">Register</h3>
+                    <h3 class="white-text">Data Diri</h3>
                     <hr class="hr-light" style="background-color:white;">
                   </div>
               <!--Form-->
@@ -68,17 +68,8 @@
                     <label for="form8" style="color:white;">Selfie dengan Foto KTP (KTP dibawah dagu)</label>
                     <input type="file" id="form8" accept="image/png, image/jpeg" style=" color:white;">
                   </div><br>
-                  <!--<p style="color:white;">Register sebagai :</p>
-                  <div class="sel sel--black-panther">
-                        <select name="select-profession" id="select-profession" style=" background-color:rgba(255,255,255,0.1); color:white;" >
-                            <option value="" disabled style="color:black;">--Pilih--</option>
-                            <option value="pemiik" style="color:black;">Pemilik kamera</option>
-                            <option value="penyewa" style="color:black;">Penyewa kamera</option>
-                            <option value="admin" style="color:black;">Admin</option>
-                        </select>
-                    </div>-->
                   <div class="text-center mt-4">
-                    <a button class="btn btn-dark waves-effect waves-light" href="register2_pemilik.php">Next</a>
+                    <button class="btn btn-dark waves-effect waves-light" href="register2_pemilik.php">Next</button>
                   </div>
                 </div>
               </div>

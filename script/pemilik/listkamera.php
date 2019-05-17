@@ -22,6 +22,13 @@
 
 </head>
 
+<?php
+  session_start();
+  if($_SESSION['user']==''){
+    header("location:login_pemilik.php");
+  }
+?>
+
 <body id="page-top">
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -50,28 +57,28 @@
               <div class="profil" style="margin-left:27%;">
                   <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
               </div>
-              <p style="color:white; text-align: center;">nama user</p>
+              <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
           </li>
           
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" >
+          <a class="nav-link" href="profile.php" >
             <i class="fas fa-fw fa-folder"></i>
             <span>Lihat Profil</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="listkamera.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Kamera</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="logout.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Log out</span></a>
         </li>
@@ -84,7 +91,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="index.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Kamera</li>
         </ol>

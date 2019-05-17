@@ -40,7 +40,7 @@
                 <div class="card-body">
                   <!--Header-->
                   <div class="text-center" style="color:white;">
-                    <h3 class="white-text">Login</h3>
+                    <h3 class="white-text">Buat Akun Anda</h3>
                     <hr class="hr-light" style="background-color:white;">
                   </div>
                   <!--Body-->
@@ -62,7 +62,7 @@
                     <input type="file" id="form6" accept="image/png, image/jpeg" style=" color:white;">
                   </div><br>
                   <div class="text-center mt-4">
-                    <a button class="btn btn-dark waves-effect waves-light" href="main-page.php">Register</a>
+                    <button class="btn btn-dark waves-effect waves-light" href="main-page.php">Register</button>
                   </div>
                 </div>
               </div>
