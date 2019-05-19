@@ -75,7 +75,7 @@
                 </h1>
 
                 <div class="home-content__buttons">
-                    <a href="script/login_penyewa.php" class="btn btn--primary full-width">
+                <a href="#login" class="smoothscroll btn btn--stroke">
                         Login
                     </a>
                 </div>
@@ -183,6 +183,31 @@
 
     </section> <!-- end about -->
     
+     <!-- login
+    ================================================== -->
+    <section id="login" class="s-works target-section">
+
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>Login</h3><br><br>
+                <p class="lead">Dan temukan referensi kamera untuk anda!</p>
+            </div>
+            <div class="row about-content about-content--buttons">
+
+                <div class="col-six tab-full left">
+                    <a href="./script/login_penyewa.php" class="btn btn--primary full-width">Login sebagai penyewa kamera</a>
+                </div>
+                <div class="col-six tab-full right">
+                    <a href="./script/pemilik/login_pemilik.php" class="btn full-width">Login sebagai pemilik kamera</a>
+                </div>
+
+            </div> 
+        </div>
+
+            </div>
+        </div> <!-- end masonry -->
+
+    </section> <!-- end ergister -->
 
     <!-- register
     ================================================== -->
@@ -196,10 +221,10 @@
             <div class="row about-content about-content--buttons">
 
                 <div class="col-six tab-full left">
-                    <a href="./script/register1_penyewa.php" class="btn btn--primary full-width">Daftar sebagai penyewa</a>
+                    <a href="./script/register1_penyewa.php" class="btn btn--primary full-width">Daftar sebagai penyewa kamera</a>
                 </div>
                 <div class="col-six tab-full right">
-                    <a href="./script/pemilik/register1_pemilik.php" class="btn full-width">Daftar sebagai peminjam</a>
+                    <a href="./script/pemilik/register1_pemilik.php" class="btn full-width">Daftar sebagai peminjam kamera</a>
                 </div>
 
             </div> 
@@ -209,8 +234,6 @@
         </div> <!-- end masonry -->
 
     </section> <!-- end ergister -->
-
-
 
 
      <!--s-stats
@@ -320,15 +343,15 @@
 
                 <ul class="footer-social">
                     <li><a href="#0">
-                        <i class="im im-facebook" aria-hidden="true"></i>
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         <span>Facebook</span>
                     </a></li>
                     <li><a href="#0">
-                        <i class="im im-twitter" aria-hidden="true"></i>
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
                         <span>Twitter</span>
                     </a></li>
                     <li><a href="#0">
-                        <i class="im im-instagram" aria-hidden="true"></i>
+                        <i class="	fab fa-instagram" aria-hidden="true"></i>
                         <span>Instagram</span>
                     </a></li>
                 </ul>

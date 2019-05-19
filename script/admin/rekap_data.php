@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Charts</title>
+  <title>Rent.Co - Pemilik Kamera</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,6 +31,9 @@
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
+    <a class="navbar-brand" href="index.php">
+      <img src="./../gambar/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
+    </a>
 
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -91,37 +94,30 @@
       </li>
     </ul>
 
-    <div id="content-wrapper">
+<div id="content-wrapper">
 
-      <div class="container-fluid">
+<div class="container-fluid">
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Penyewa</li>
-        </ol>
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">Rekap Data Penyewaan</li>
+  </ol>
 
-        <?php
-          include 'koneksi.php';
-          $sql= "SELECT * FROM penyewa ";
-          $result = mysqli_query($mysqli,$sql);
-          while($rows = mysqli_fetch_array($result))
-          {
-        ?>
-        <!-- Table Penyewa-->
-        <div class="card mb-3">
+   <!-- Table Pemilik-->
+   <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Tabel Data Penyewa Kamera</div>
-            <div class="card-body">
+            Tabel Rekap data penyewaan</div>
+          <div class="card-body">
             <div class="row">
               <div class="col-sm-12">
                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                    <thead>
-                    <tr><th rowspan="1" colspan="1">Nama</th>
-                      <th rowspan="1" colspan="1">ID Penyewa</th>
+                  <thead>
+                     <tr><th rowspan="1" colspan="1">Nama</th>
+                      <th rowspan="1" colspan="1">ID Pemilik</th>
                       <th rowspan="1" colspan="1">Email</th>
                       <th rowspan="1" colspan="1">No Telp</th>
                       <th rowspan="1" colspan="1">No KTP</th>
@@ -129,14 +125,14 @@
                     </tfoot>
                     <tbody>
                     <tr role="row" class="odd">
-                        <td class="sorting_1"><?php echo $rows['nama_penyewa']?></td>
-                        <td><?php echo $rows['id_penyewa']?></td>
-                        <td><?php echo $rows['email_penyewa']?></td>
-                        <td><?php echo $rows['notelp_penyewa']?></td>
-                        <td><?php echo $rows['noktp_penyewa']?></td>
+                        <td class="sorting_1"><?php //echo $rows['']?></td>
+                        <td><?php //echo $rows['']?></td>
+                        <td><?php //echo $rows['']?></td>
+                        <td><?php // $rows['']?></td>
+                        <td><?php //echo $rows['']?></td>
                     </tr> 
                     </tbody>
-                    </table>
+                  </table>
                 </div>
               </div>
                 <div class="row">
@@ -151,7 +147,8 @@
             </div>
           </div>
         </div>
-        <?php } ?>
+        <?php //} ?>
+
         
       <!-- Sticky Footer -->
       <footer class="sticky-footer">

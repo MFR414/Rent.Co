@@ -31,6 +31,9 @@
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
+    <a class="navbar-brand" href="index.php">
+      <img src="./../gambar/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
+    </a>
 
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -64,25 +67,30 @@
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-folder"></i>
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item ">
+      <li class="nav-item">
         <a class="nav-link" href="penyewa.php" >
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-running"></i>
           <span>Penyewa kamera</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="pemilik.php">
+          <i class="fas fa-male"></i>
           <span>Pemilik kamera</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="kamera.php">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-camera-retro"></i>
           <span>Kamera</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="rekap_data.php">
+          <i class="far fa-handshake"></i>
+          <span>Rekap data</span></a>
       </li>
     </ul>
 
@@ -108,18 +116,14 @@
         <!-- Table Pemilik-->
         <div class="card mb-3">
           <div class="card-header">
-            <i class="fas fa-chart-area"></i>
+            <i class="fas fa-table"></i>
             Tabel Data Penyewa Kamera</div>
           <div class="card-body">
-            <div class="card mb-3">
-              <div class="card-header">
-                <i class="fas fa-table"></i>
-                Data Table Example</div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                    <thead>
-                    <tr><th rowspan="1" colspan="1">Nama</th>
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                  <thead>
+                     <tr><th rowspan="1" colspan="1">Nama</th>
                       <th rowspan="1" colspan="1">ID Pemilik</th>
                       <th rowspan="1" colspan="1">Email</th>
                       <th rowspan="1" colspan="1">No Telp</th>
@@ -135,13 +139,20 @@
                         <td><?php echo $rows['noktp_pemilik']?></td>
                     </tr> 
                     </tbody>
-                  </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                  </table>
                 </div>
               </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-7">
+                     <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
         <?php } ?>
 

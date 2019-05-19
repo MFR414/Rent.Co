@@ -32,24 +32,27 @@
     header("location:login_pemilik.php");
   }
   ?>
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand" href="index.php">
-      <img src="./gambar/tampilan/logo-3.png" width="170" height="50" class="d-inline-block align-top" alt="">
-    </a>
+<button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+  <!--<i class="fas fa-bars"></i>--> <img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+</button>
+<a class="navbar-brand" href="index.php">
+  <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+</a>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-  </nav>
+<!-- Navbar Search -->
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="button">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</nav>
   <!--navbar search-->
 
   <div id="wrapper">
@@ -77,12 +80,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="listkamera.php">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-camera-retro"></i>
           <span>Kamera</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="	fas fa-door-open"></i>
           <span>Log out</span></a>
       </li>
     </ul>

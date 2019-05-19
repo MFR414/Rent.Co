@@ -90,7 +90,7 @@
                     <input type="text" class="form-control" style="width: 920px !important;" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                 </form>     
                     <a class="btn btn-outline-dark" type="button" href="#">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </a>
                          
 
@@ -179,45 +179,9 @@
     ?>
 
     <footer>
-        <div class="row">
-            <div class="col-full">
-
-                <div class="footer-logo">
-                    <a class="footer-site-logo" width="150" height="70" href="#0"><img src="../gambar/logo-3-negatif.png" alt="Homepage"></a>
-                </div>
-
-                <ul class="footer-social">
-                    <li><a href="#0">
-                        <i class="im im-facebook" aria-hidden="true"></i>
-                        <span>Facebook</span>
-                    </a></li>
-                    <li><a href="#0">
-                        <i class="im im-twitter" aria-hidden="true"></i>
-                        <span>Twitter</span>
-                    </a></li>
-                    <li><a href="#0">
-                        <i class="im im-instagram" aria-hidden="true"></i>
-                        <span>Instagram</span>
-                    </a></li>
-                </ul>
-                    
-            </div>
-        </div>
-
-        <div class="row footer-bottom">
-
-            <div class="col-twelve">
-                <div class="copyright">
-                    <span>© Copyright Rent.Co 2019</span> 
-                </div>
-
-                <div class="go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-        </div> <!-- end footer-bottom -->
-
+        <?php 
+            include 'footer.php';
+        ?>
     </footer> <!-- end footer -->
 
 </body>
