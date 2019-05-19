@@ -5,5 +5,5 @@
     unset($_SESSION["user"]);
     session_unset();
     session_destroy();
-    header("location:../login_admin.php");
+    header("location:login_admin.php");
 ?>
