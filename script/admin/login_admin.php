@@ -49,13 +49,12 @@
                     if(isset($_POST['submit']) && !empty($_POST['username']) && !empty($_POST['password'])){
                       $user=$_POST['username'];
                       $pass=$_POST['password'];
-                      $sql = "SELECT * FROM pemilik_kamera WHERE username='$user' AND password='$pass' ";
+                      $sql = "SELECT * FROM admin WHERE user_admin='$user' AND pass_admin='$pass' ";
                       $result = mysqli_query($mysqli,$sql);
                       $check=mysqli_num_rows($result);
                       if($check>0){
                         $row=mysqli_fetch_array($result);
-                        $_SESSION["user"] = $row['username'];
-                        $_SESSION["id_user"] = $row['id_pemilik'];
+                        $_SESSION["nama"] = $row['nama_admin'];
                         header("location:index.php");
                       }else{
                         $message = "Login Unsuccesfull";

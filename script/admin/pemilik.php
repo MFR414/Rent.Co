@@ -23,7 +23,13 @@
 </head>
 
 <body id="page-top">
-
+  <?php 
+    session_start();
+    if($_SESSION['nama']==''){
+      header("location:login_admin.php");
+    }
+    $user = $_SESSION['nama'];
+  ?>
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="index.php"></a>
@@ -31,9 +37,6 @@
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
-    <a class="navbar-brand" href="index.php">
-      <img src="./../gambar/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
-    </a>
 
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -54,7 +57,8 @@
           <i class="fas fa-user-circle fa-fw">Admin</i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Log out</a>
+          <a class="dropdown-item" href="#">Hi, <?php echo $user?></a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
         </div>
       </li>
     </ul>
@@ -101,7 +105,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="index.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Pemilik Kamera</li>
         </ol>

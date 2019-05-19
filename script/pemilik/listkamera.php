@@ -67,7 +67,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profile.php" >
+          <a class="nav-link" href="profile_pemilik.php" >
             <i class="fas fa-fw fa-folder"></i>
             <span>Lihat Profil</span>
           </a>
@@ -138,7 +138,6 @@
                         <td><?php echo $rows['status_kamera']?></td>
                         <td><?php echo $rows['gambar_kamera']?></td>
                         <td>
-                          <button href="#" class="btn-sm btn-warning"><strong>Read</strong></button>
                           <button href="#" class="btn-sm btn-success"><strong>Edit</strong></button>
                           <form action="delete-kamera.php" method="GET">
                             <button type = "submit" class="btn-sm btn-danger" name="submit" value="<?php echo $rows['id_kamera']?>"><strong>Delete</strong></button>

@@ -14,6 +14,7 @@
 </head>
 <?php
     include "koneksi.php";
+    
 ?>
 <body>
     <div class="container portfolio">

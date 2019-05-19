@@ -7,17 +7,18 @@
     <title>Rent.Co - Profil</title>
     <!--css-->
     <link href="css/profile.css" rel="stylesheet">
+    <!--icon-->
+    <link rel="shortcut icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
+    <link rel="icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
 
 </head>
 <?php
-  session_start();
-  if($_SESSION['user']==''){
-    header("location:login_pemilik.php");
-  }
-  include "koneksi.php";
-    
+    session_start();
+    if($_SESSION['user']==''){
+        header("location:login_pemilik.php");
+    }
+    include "koneksi.php";
 ?>
-<body>
 <body>
     <div class="container portfolio">
         <div class="bio-info">
@@ -31,13 +32,20 @@
                         </div>
                     </div>	
                 </div>
+                <?php
+                    $id=$_SESSION["id_user"];
+                    $sql= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id' ";
+                    $result = mysqli_query($mysqli,$sql);
+                    while($rows = mysqli_fetch_array($result))
+                      {
+                ?>
                 <div class="col-md-6">
                     <div class="bio-content">
-                        <h1>Hi, Saya (username)</h1>
+                        <h1>Hi, Saya <?php echo $rows['nama_pemilik']?></h1>
                         <h6>Email</h6>
-                        <h4>(ini email)</h4>
+                        <h4><?php echo $rows['email_pemilik'] ?></h4>
                         <h6>No. Telepon</h6>
-                        <h4>(ini nomor telepon)</h4>
+                        <h4><?php echo $rows['notelp_pemilik']?></h4>
                         <p>Foto</p>
                         <div class="row">
                             <div class="col-md-6">
@@ -47,8 +55,10 @@
                                 <h6>foto KTP</h6>
                             </div>
                         </div>
+                        <a href="index.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
                     </div>
                 </div>
+                <?php } ?>
             </div>	
         </div>
     </div>

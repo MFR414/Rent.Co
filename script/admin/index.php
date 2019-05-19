@@ -23,7 +23,13 @@
 </head>
 
 <body id="page-top">
-
+  <?php 
+  session_start();
+  if($_SESSION['nama']==''){
+    header("location:login_admin.php");
+  }
+  $user = $_SESSION['nama'];
+  ?>
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
@@ -52,9 +58,8 @@
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Hi, nama</a>
-          <a class="dropdown-item" href="#">Lihat profil</a>
-          <a class="dropdown-item" href="#page-top">Log out</a>
+          <a class="dropdown-item" href="#">Hi, <?php echo $user?></a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
       </li>
     </ul>
 

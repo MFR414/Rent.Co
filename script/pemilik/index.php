@@ -73,7 +73,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="profile.php" >
+        <a class="nav-link" href="profile_pemilik.php" >
           <i class="fas fa-fw fa-folder"></i>
           <span>Lihat Profil</span>
         </a>

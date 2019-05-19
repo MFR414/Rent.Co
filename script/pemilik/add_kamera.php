@@ -82,7 +82,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" >
+          <a class="nav-link" href="profile_pemilik.php" >
             <i class="fas fa-fw fa-folder"></i>
             <span>Lihat Profil</span>
           </a>
@@ -93,7 +93,7 @@
             <span>Kamera</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="logout.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Log out</span></a>
         </li>
