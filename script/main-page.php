@@ -164,7 +164,7 @@
     <div class= "container">
         <div class="row">
             <div class="card" style="width:200px">
-                <img class="card-img-top" src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg" alt="Card image">
+                <img class="card-img-top" src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $rows['merek_kamera']?> <?php echo $rows['seri_kamera']?></h4>
                         <form action="detail-kamera.php" method="GET">

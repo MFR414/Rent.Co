@@ -55,6 +55,9 @@
                       if($check>0){
                         $row=mysqli_fetch_array($result);
                         $_SESSION["user"] = $row['username'];
+                        $_SESSION["email_penyewa"]= $row['email_penyewa'];
+                        $_SESSION["notelp_penyewa"]= $row['notelp_penyewa'];
+                        $_SESSION["noktp_penyewa"]= $row['noktp_penyewa'];
                         header("location:main-page.php");
                       }else{
                         header("location:login_penyewa.php");
@@ -72,15 +75,6 @@
                     <label for="form4" style="color:white;">Password</label>
                     <input type="password" id="form4" class="white-text form-control" name="password" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
-                  <!--<p style="color:white;">Masuk sebagai :</p>
-                  <div class="sel sel--black-panther">
-                        <select name="select-profession" id="select-profession" style=" background-color:rgba(255,255,255,0.1); color:white;" >
-                            <option value="" disabled style="color:black;">--Pilih--</option>
-                            <option value="pemilik" style="color:black;">Pemilik kamera</option>
-                            <option value="penyewa" style="color:black;">Penyewa kamera</option>
-                            <option value="admin" style="color:black;">Admin</option>
-                        </select>
-                    </div>-->
                   <div class="text-center mt-4">
                     <button class="btn btn-dark waves-effect waves-light" style="color:white;" name="submit">Login</button>
                   </div>

@@ -14,6 +14,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </head>
 <body aria-busy="true">
+<?php
+    include "koneksi.php";
+
+    if(isset($_POST['simpan'])){
+      $merk = $_POST['merk'];
+      $seri = $_POST['seri'];
+      $spek = $_POST['spek'];
+      $kondisi = $_POST['kondisi'];
+      $harga = $_POST['harga'];
+      $status = $_POST['status'];
+
+      $sql = "INSERT INTO kamera SET id_pemilik ='$id',merek_kamera='$merk',
+              seri_kamera='$seri',spesifikasi_kamera='$spek',kondisi_kamera='$kondisi'
+              ,harga_sewa='$harga',status_kamera='$status',gambar_kamera='$filename'";
+      $result = mysqli_query($mysqli,$sql);
+      if($result){
+        echo "Data Berhasil Dimasukkan";
+      }
+    }
+  ?>
   <!-- Main navigation -->
   <header>  
     <!-- Full Page Intro -->
@@ -46,19 +66,19 @@
               <div class="md-form">
                     <label for="form3" class="" style="color:white;" >Nama Lengkap</label>
                     <i class="fas fa-user prefix white-text active"></i>
-                    <input type="text" id="form3" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
+                    <input type="text" id="form3" name="nama" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
                   <div class="md-form">
                     <label for="form4" style="color:white;">Email</label>
-                    <input type="email" id="form4" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
+                    <input type="email" id="form4" name="email" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
                   <div class="md-form">
-                    <label for="form5" style="color:white;">Nomor telepon 1 (WA)</label>
-                    <input type="number" id="form5" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
+                    <label for="form5" style="color:white;">Nomor telepon (WA)</label>
+                    <input type="number" id="form5" name="notelp" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
                   <div class="md-form">
                     <label for="form6" style="color:white;">Nomor KTP</label>
-                    <input type="number" id="form6" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
+                    <input type="number" id="form6" name="noktp" class="white-text form-control" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
                   <div class="md-form">
                     <label for="form7" style="color:white;">upload Foto KTP</label>

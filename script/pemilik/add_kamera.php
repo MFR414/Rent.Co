@@ -31,10 +31,10 @@
       $kondisi = $_POST['kondisi'];
       $harga = $_POST['harga'];
       $status = $_POST['status'];
-      $filetmp = $_FILES['gbr-kamera']['tmp_name'];
-      $filename = $_FILES['gbr-kamera']['name'];
-      $filepath = "Rent.Co/gambar/kamera/".$filename;
-      move_uploaded_file($filetmp,$filepath);
+      $filename = $_FILES['gbrKam']['name'];
+      $filetmp = $_FILES['gbrKam']['tmp_name'];
+      $filefolder = "../../gambar/kamera".$filename;
+      move_uploaded_file($filetmp,$filefolder);
 
       $sql = "INSERT INTO kamera SET id_pemilik ='$id',merek_kamera='$merk',
               seri_kamera='$seri',spesifikasi_kamera='$spek',kondisi_kamera='$kondisi'
@@ -104,7 +104,7 @@
       <div class="container-fluid">
 
         <!-- Area Chart Example-->
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
         <div class="card mb-3">
               <div class="card-body">
                     <div class="row">
@@ -136,7 +136,7 @@
                   </div><br>
                   <div class="md-form">
                       <label for="form9">Foto Kamera</label>
-                      <input type="file" name="gbr-kamera">
+                      <input type="file" name="gbrKam"/>
                   </div><br>
         <div class="text-center mt-4">
         <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>
