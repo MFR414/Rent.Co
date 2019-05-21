@@ -31,6 +31,11 @@
   if($_SESSION['user']==''){
     header("location:login_pemilik.php");
   }
+  include "koneksi.php";
+  $id=$_SESSION["id_user"];
+  $sqlpemilik= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id'";
+  $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
+  $row=mysqli_fetch_array($resultpemilik);
   ?>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -53,7 +58,7 @@
     <ul class="sidebar navbar-nav">
         <li class="nav-item">
             <div class="profil" style="margin-left:27%;">
-                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/tampilan/ig-warna.png" width="100px;">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/selfieKtp/<?php echo $row['gamselfie_pemilik']?>" width="100px;">
             </div>
             <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
         </li>
@@ -88,8 +93,6 @@
     </ul>
 
     <?php
-    include "koneksi.php";
-    $id=$_SESSION["id_user"];
     $sql= "SELECT * FROM kamera WHERE id_pemilik = '$id'";
     $result = mysqli_query($mysqli,$sql);
     while($rows = mysqli_fetch_array($result))
@@ -103,7 +106,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <img class="card-img-top" src="../Rent.Co/gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg">
+              <img class="card-img-top" src="../Rent.Co/gambar/kamera/<?php echo $rows['gambar_kamera']?>">
               <div class="card-body">
                 <h4 class="card-title">
                   <p> <?php echo $rows['merek_kamera']?> <?php echo $rows['seri_kamera']?></p>
