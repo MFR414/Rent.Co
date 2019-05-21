@@ -35,14 +35,14 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-  <!--<i class="fas fa-bars"></i>--> <img src="../../gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+  <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
 </button>
 <a class="navbar-brand" href="index.php">
   <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
 </a>
 
 <!-- Navbar Search -->
-<!--<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
   <div class="input-group">
     <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
     <div class="input-group-append">
@@ -52,7 +52,7 @@
     </div>
   </div>
 </form>
-</nav>-->
+</nav>
   <!--navbar search-->
 
   <div id="wrapper">

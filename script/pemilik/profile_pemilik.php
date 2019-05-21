@@ -20,6 +20,13 @@
     include "koneksi.php";
 ?>
 <body>
+    <?php
+    $id=$_SESSION["id_user"];
+    $sql= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id' ";
+    $result = mysqli_query($mysqli,$sql);
+    while($rows = mysqli_fetch_array($result))
+        {
+    ?>
     <div class="container portfolio">
         <div class="bio-info">
             <div class="row">
@@ -27,18 +34,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="bio-image">
-                                <img src="https://image.ibb.co/f5Kehq/bio-image.jpg" alt="image" />
+                                <img src="./gambarPemilik/selfieKtp/<?php echo $rows['gamselfie_pemilik']?>" alt="image" />
                             </div>			
                         </div>
                     </div>	
                 </div>
-                <?php
-                    $id=$_SESSION["id_user"];
-                    $sql= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id' ";
-                    $result = mysqli_query($mysqli,$sql);
-                    while($rows = mysqli_fetch_array($result))
-                      {
-                ?>
                 <div class="col-md-6">
                     <div class="bio-content">
                         <h1>Hi, Saya <?php echo $rows['nama_pemilik']?></h1>
@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="" alt="Card image cap">
+                                    <img class="card-img-top" src="./gambarPemilik/ktp/<?php echo $rows['gamktp_pemilik']?>" alt="Card image cap">
                                 </div>
                                 <h6>foto KTP</h6>
                             </div>
