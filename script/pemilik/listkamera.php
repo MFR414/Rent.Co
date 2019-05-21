@@ -22,41 +22,41 @@
 
 </head>
 
-<?php
+<body id="page-top">
+<?php 
   session_start();
   if($_SESSION['user']==''){
     header("location:login_pemilik.php");
   }
-?>
+  include "koneksi.php";
+  $id=$_SESSION["id_user"];
+  $sqlpemilik= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id'";
+  $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
+  $row=mysqli_fetch_array($resultpemilik);
+  ?>
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-<body id="page-top">
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+  </button>
+  <a class="navbar-brand" href="index.php">
+    <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+  </a>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-  
-      <a class="navbar-brand" href="index.php">
-        <img src="./gambar/tampilan/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
-      </a>
-  
-      <!-- Navbar Search -->
-      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </nav>
-  
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
-          <li class="nav-item">
-              <div class="profil" style="margin-left:27%;">
-                  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
-              </div>
+  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+    
+  </form>
+  </nav>
+    <!--navbar search-->
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+            <div class="profil" style="margin-left:27%;">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/selfieKtp/<?php echo $row['gamselfie_pemilik']?>" width="100px;">
+            </div>
               <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
           </li>
           
