@@ -17,7 +17,7 @@
   <!-- Main navigation -->
   <header>  
     <!-- Full Page Intro -->
-    <div class="view" style="background-image: url('./gambar/tampilan/10-edit.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="view" style="background-image: url('./gambarPemilik/tampilan/10-edit.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <!-- Mask & flexbox options-->
       <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
         <!-- Content -->
@@ -29,7 +29,7 @@
               <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Masuk sekarang! </h1>
               <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; background-color:white;">
               <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Dan temukan kamera pilihan anda dengan merk yang bervariasi.</h6>
-              <a class="tulisan" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Belum punya akun? <a href="#" style="color:white;">Klik disini!</a></a><br><br>
+              <a class="tulisan" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Belum punya akun? <a href="register1_pemilik.php" style="color:white;">Klik disini!</a></a><br><br>
               <a button class="btn btn-outline-light" href="../../index.php" style="color:white">Kembali</a>
             </div>
             <!--Grid column-->
@@ -85,9 +85,6 @@
                     </div>-->
                   <div class="text-center mt-6">
                     <button class="btn btn-dark waves-effect waves-light" style="color:white;" name="submit">Login</button>
-                  </div>
-                  <div class="text-center mt-6">
-                  <a button class="btn btn-secondary" href="register1_pemilik.php" style="color:white">Register</a>
                   </div>
                 </div>
               </div>

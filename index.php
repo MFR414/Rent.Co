@@ -224,7 +224,7 @@
                     <a href="./script/register1_penyewa.php" class="btn btn--primary full-width">Daftar sebagai penyewa kamera</a>
                 </div>
                 <div class="col-six tab-full right">
-                    <a href="./script/pemilik/register1_pemilik.php" class="btn full-width">Daftar sebagai peminjam kamera</a>
+                    <a href="./script/pemilik/register1_pemilik.php" class="btn full-width">Daftar sebagai pemilik kamera</a>
                 </div>
 
             </div> 
