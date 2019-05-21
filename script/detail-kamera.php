@@ -88,7 +88,7 @@
     <!--ini info produk-->
     <div class="row">
         <div class="col-4">
-            <img src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg" width="400"height="300">
+            <img src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>" width="400"height="300">
         </div>
                 <div class="col-4">
                     <div class="judul">
@@ -117,9 +117,15 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Spesifikasi</button>
-                        <a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F">
-                        Hubungi ke Whatsapp</a>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="main-page.php" role="tab" aria-controls="pills-home" aria-selected="true">Kembali</a></button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-success" data-toggle="pill" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F" 
+                                role="tab" aria-controls="pills-profile" aria-selected="false">Hubungi Ke Whatsapp</a></button>
+                            </li>
+                        </ul>
                     </div>
                     <?php            
                         /*}*/
