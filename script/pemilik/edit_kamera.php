@@ -151,6 +151,7 @@
       $resultupdatekamera = mysqli_query($mysqli,$sqlupdatekamera);
       if($resultupdatekamera){
         echo "Data Berhasil Dimasukkan";
+        echo '<script>window.location="listkamera.php"</script>';
       }else{
         echo "Data Gagal Dimasukkan";
         echo mysqli_errno($mysqli);
