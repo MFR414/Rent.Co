@@ -48,28 +48,28 @@
     </style>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff;"> <!--"navbar navbar-dark bg-primary"(warna bitu langit)   "navbar navbar-light" style="background-color: #e3f2fd;"(ganti warna lain)  "navbar navbar-dark bg-dark"(warna hitam)-->
-        <a href="index.php">
-            <img src="../gambar/logo-3.png" width="130"height="45">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="background-color: #000000;"> <!--"navbar navbar-dark bg-primary"(warna bitu langit)   "navbar navbar-light" style="background-color: #e3f2fd;"(ganti warna lain)  "navbar navbar-dark bg-dark"(warna hitam)-->
+        <a href="main-page.php">
+            <img src="../gambar/logo-putih.png" width="130"height="45">
         </a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></a>
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="search-bar">
+            <!--<div class="search-bar">
                 <div class="input-group mb-3">
               <form action="#">
                     <input type="text" class="form-control" style="width: 920px !important;" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                   </form>     
                     <a class="btn btn-outline-success" type="button" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                         
+                         -->
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="dropdown">
+                    <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white;">
                         <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hello user!
                         </div>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button">Lihat profil</button>
                             <button class="dropdown-item" type="button">Keluar</button>
                         </div>
@@ -90,7 +90,7 @@
         <div class="col-4">
             <img src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>" width="400"height="300">
         </div>
-                <div class="col-7">
+                <div class="col-4">
                     <div class="judul">
                         <div class="sub-judul">
                             <p><h3><?php echo $rows['merek_kamera']?> <?php echo $rows['seri_kamera']?></h3></p>
@@ -131,6 +131,28 @@
                         }
                     ?>
                 </div>
+                <!--Side-Bar-->
+                <aside class="col-sm-2" style="margin-top:100px; background-color:#bbbdbf; margin-bottom:300px;">
+                    <div class="sidebar_widget">
+                        <div class="widget_heading">
+                        <h5><i class="fa fa-envelope" aria-hidden="true"></i>Sewa sekarang</h5><br>
+                        </div>
+                        <form method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="fromdate" placeholder="Tanggal sewa(dd/mm/yyyy)" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="todate" placeholder="Tanggal kembali(dd/mm/yyyy)" required>
+                        </div>
+                            <div class="form-group">
+                            <button type="submit" class="btn btn-dark"  name="submit" value="Book Now">Sewa </button>
+                            </div>
+                                
+                        </form>
+                    </div>
+                </aside>
+    <!--/Side-Bar--> 
         </div>
+        <?php include 'footer.php'; ?>
 </body>
 </html>

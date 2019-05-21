@@ -63,6 +63,12 @@
     .input{
         width:80%;
     }
+    .card{
+        margin-left : 50px;
+        margin-right : 50px;
+        margin-top : 30px;
+        margin-bottom : 10px;
+    }
    /* ----------------------end search------------------ */
 
     </style>
@@ -70,36 +76,34 @@
 </head>
 <body>
     <?php 
-    session_start();
+    /*session_start();
     if($_SESSION['user']==''){
         header("location:login_penyewa.php");
-    }
+    }*/
     ?>
 <!--awal navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff;"> <!--"navbar navbar-dark bg-primary"(warna bitu langit)   "navbar navbar-light" style="background-color: #e3f2fd;"(ganti warna lain)  "navbar navbar-dark bg-dark"(warna hitam)-->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="background-color: #000000;"> <!--"navbar navbar-dark bg-primary"(warna bitu langit)   "navbar navbar-light" style="background-color: #e3f2fd;"(ganti warna lain)  "navbar navbar-dark bg-dark"(warna hitam)-->
         <a href="main-page.php">
-            <img src="../gambar/logo-3.png" width="130"height="45"><img>
+            <img src="../gambar/logo-putih.png" width="130"height="45"><img>
         </a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></a>
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="search-bar">
+           <!-- <div class="search-bar">
                 <div class="input-group mb-3">
                 <form action="#">
                     <input type="text" class="form-control" style="width: 920px !important;" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                 </form>     
                     <a class="btn btn-outline-dark" type="button" href="#">
                         <i class="fas fa-search" aria-hidden="true"></i>
-                    </a>
+                    </a>-->
                          
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="dropdown">
+                    <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white; font-size:18;">
                         <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hello user!
                         </div>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                             <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
                             <a class="dropdown-item" href="logout.php">Keluar</a>
                         </div>
@@ -108,7 +112,6 @@
             </div>    
         
     </nav>
-    <!-- ini ending navbar -->
 
     <div class="carousel">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -118,9 +121,9 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
 
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="height:400px;">
                 <div class="carousel-item active">
-                    <img src="../gambar/awal/8.jpg" class="d-block w-100" width="1024" height="450" alt="#carouselExampleCaptions">
+                    <img src="../gambar/awal/8.jpg" class="d-block w-100" width="1024" height="400" alt="#carouselExampleCaptions">
                     <div class="carousel-caption d-none d-md-block">
                     <h5>Pilihan Kamera Bervariasi</h5>
                     <p></p>
@@ -128,14 +131,14 @@
             </div>
 
             <div class="carousel-item">
-                <img src="../gambar/awal/2.jpg" class="d-block w-100" width="1024" height="450" alt="#carouselExampleCaptions">
+                <img src="../gambar/awal/2.jpg" class="d-block w-100" width="1024" height="100" alt="#carouselExampleCaptions">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Website Penyewaan Terpercaya</h5>
                     </div>
             </div>
 
             <div class="carousel-item">
-                <img src="../gambar/awal/1.jpg" class="d-block w-100" width="1024" height="450" alt="#carouselExampleCaptions">
+                <img src="../gambar/awal/1.jpg" class="d-block w-100" width="1024" height="100" alt="#carouselExampleCaptions">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Abadikan Momenmu dengan Rent.Co</h5>
                     </div>
@@ -154,17 +157,24 @@
   </div>
   <?php
     include "koneksi.php";
-    $sql= "SELECT * FROM kamera ";
-    $result = mysqli_query($mysqli,$sql);
-    while($rows = mysqli_fetch_array($result))
+        $sql= "SELECT * FROM kamera ";
+        $result = mysqli_query($mysqli,$sql);
+        while($rows = mysqli_fetch_array($result))
         {
+    
   ?>
 
 <!-- carousel-->
     <div class= "container">
         <div class="row">
+<<<<<<< HEAD
+        <?php //$all_items = array_chunk($my_array,3); ?>
+            <div class="card" style="width:200px;">
+                <img class="card-img-top" src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg" alt="Card image">
+=======
             <div class="card" style="width:200px">
                 <img class="card-img-top" src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>" alt="Card image">
+>>>>>>> 1798a34ade91badcb07494aa06fe02163673ece9
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $rows['merek_kamera']?> <?php echo $rows['seri_kamera']?></h4>
                         <form action="detail-kamera.php" method="GET">
@@ -176,6 +186,7 @@
     </div> 
     <?php
         }
+    
     ?>
 
     <footer>

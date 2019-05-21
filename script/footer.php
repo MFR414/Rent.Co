@@ -23,7 +23,7 @@ footer {
     text-align: center;
     color: rgba(255, 255, 255, 0.2);
     background-color:black;
-    height:300px;
+   /*height:300px;*/
 }
 
 footer a, footer a:visited {
@@ -123,7 +123,7 @@ footer {
    <body>
        <!-- footer
     ================================================== -->
-    <footer style="background-color:black;">
+    <footer style="background-color:black; height:290px;">
         <div class="row" >
             <div class="col-full">
 

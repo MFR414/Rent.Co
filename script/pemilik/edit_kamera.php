@@ -16,40 +16,11 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
-    <?php
-    include "koneksi.php";
-    /*session_start();
-    if($_SESSION['user']==''){
-      header("location:login_pemilik.php");
-    }
-    $id=$_SESSION["id_user"];*/
-
-    if(isset($_POST['simpan'])){
-      $merk = $_POST['merk'];
-      $seri = $_POST['seri'];
-      $spek = $_POST['spek'];
-      $kondisi = $_POST['kondisi'];
-      $harga = $_POST['harga'];
-      $status = $_POST['status'];
-      $filename = $_FILES['gbrKam']['name'];
-      $filetmp = $_FILES['gbrKam']['tmp_name'];
-      $filefolder = "../../gambar/kamera".$filename;
-      move_uploaded_file($filetmp,$filefolder);
-
-      $sql = "INSERT INTO kamera SET id_pemilik ='$id',merek_kamera='$merk',
-              seri_kamera='$seri',spesifikasi_kamera='$spek',kondisi_kamera='$kondisi'
-              ,harga_sewa='$harga',status_kamera='$status',gambar_kamera='$filename'";
-      $result = mysqli_query($mysqli,$sql);
-      if($result){
-        echo "Data Berhasil Dimasukkan";
-      }
-    }
-    ?>
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
         <a class="navbar-brand" href="index.php">
-            <img src="./gambar/tampilan/logo-putih.png" width="170" height="50" class="d-inline-block align-top" alt="">
+            <img src="./gambar/tampilan/logo-item.png" width="170" height="50" class="d-inline-block align-top" alt="">
         </a>
 
         <!-- Navbar Search -->
@@ -109,7 +80,7 @@
       <div class="container-fluid">
 
         <!-- Area Chart Example-->
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST">
         <div class="card mb-3">
               <div class="card-body">
                     <div class="row">
@@ -141,7 +112,7 @@
                   </div><br>
                   <div class="md-form">
                       <label for="form9">Foto Kamera</label>
-                      <input type="file" name="gbrKam"/>
+                      <input type="file" name="gbr-kamera">
                   </div><br>
         <div class="text-center mt-4">
         <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>

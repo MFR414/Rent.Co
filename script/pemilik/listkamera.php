@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Daftar Kamera</title>
+  <title>Rent.Co - Daftar Kamera</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -65,6 +65,11 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="confirm-sewa.php">
+            <i class="far fa-handshake"></i>
+            <span>Konfirmasi sewa</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="profile_pemilik.php" >
