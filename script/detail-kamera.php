@@ -62,7 +62,7 @@
                     <input type="text" class="form-control" style="width: 920px !important;" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                   </form>     
                     <a class="btn btn-outline-success" type="button" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                         -->
+                        -->                         
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white;">
@@ -117,22 +117,21 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="main-page.php" role="tab" aria-controls="pills-home" aria-selected="true">Kembali</a></button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-success" data-toggle="pill" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F" 
-                                role="tab" aria-controls="pills-profile" aria-selected="false">Hubungi Ke Whatsapp</a></button>
-                            </li>
-                        </ul>
+                        
+                            <a type="button" class="btn btn-success" data-toggle="pill" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F" 
+                            role="tab" aria-controls="pills-profile" aria-selected="false">Hubungi Ke Whatsapp</a>
+                            
+                            <a type="submit" class="btn btn-outline-dark" href="main-page.php" 
+                             style="margin-left:240px; margin-top: 10px;">Kembali</a>
+                            
+                        
                     </div>
                     <?php            
                         }
                     ?>
                 </div>
-                <!--Side-Bar-->
-                <aside class="col-sm-2" style="margin-top:100px; background-color:#bbbdbf; margin-bottom:300px;">
+                 <!--Side-Bar-->
+                 <aside class="col-sm-2" style="margin-top:100px; background-color:#bbbdbf; margin-bottom:300px;">
                     <div class="sidebar_widget">
                         <div class="widget_heading">
                         <h5><i class="fa fa-envelope" aria-hidden="true"></i>Sewa sekarang</h5><br>
@@ -146,9 +145,9 @@
                         </div>
                             <div class="form-group">
                             <button type="submit" class="btn btn-dark"  name="submit" value="Book Now">Sewa </button>
-                            </div>
-                                
-                        </form>
+        </div>
+                                        
+        </form>
                     </div>
                 </aside>
     <!--/Side-Bar--> 

@@ -143,7 +143,9 @@
                         <td><?php echo $rows['status_kamera']?></td>
                         <td><?php echo $rows['gambar_kamera']?></td>
                         <td>
-                          <button href="#" class="btn-sm btn-success"><strong>Edit</strong></button>
+                          <form action="edit_kamera.php" method="GET">
+                            <button type = "submit" class="btn-sm btn-success" name="submit" value="<?php echo $rows['id_kamera']?>"><strong>Edit</strong></button>
+                          </form>
                           <form action="delete-kamera.php" method="GET">
                             <button type = "submit" class="btn-sm btn-danger" name="submit" value="<?php echo $rows['id_kamera']?>"><strong>Delete</strong></button>
                           </form>

@@ -18,11 +18,11 @@
 <body>
     <?php
     include "koneksi.php";
-    /*session_start();
+    session_start();
     if($_SESSION['user']==''){
       header("location:login_pemilik.php");
     }
-    $id=$_SESSION["id_user"];*/
+    $id=$_SESSION["id_user"];
 
     if(isset($_POST['simpan'])){
       $merk = $_POST['merk'];
@@ -33,7 +33,7 @@
       $status = $_POST['status'];
       $filename = $_FILES['gbrKam']['name'];
       $filetmp = $_FILES['gbrKam']['tmp_name'];
-      $filefolder = "../../gambar/kamera".$filename;
+      $filefolder = "../../gambar/kamera/".$filename;
       move_uploaded_file($filetmp,$filefolder);
 
       $sql = "INSERT INTO kamera SET id_pemilik ='$id',merek_kamera='$merk',

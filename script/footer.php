@@ -128,7 +128,7 @@ footer {
             <div class="col-full">
 
                 <div class="footer-logo" >
-                    <a class="footer-site-logo" href="#0"  ><img src="../gambar/logo-3-negatif.png" alt="Homepage" width="200px" height="50px"></a>
+                    <a class="footer-site-logo" href="#0"  ><img src="../gambar/logo-putih.png" alt="Homepage" width="200px" height="50px"></a>
                 </div>
 
                 <ul class="footer-social" style="align : middle;">
