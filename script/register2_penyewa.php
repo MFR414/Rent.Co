@@ -30,7 +30,7 @@
         $message = "Wrong Password";
         echo "<script type='text/javascript'>alert('$message');</script>";
       }else{
-        $sql = "UPDATE penyewa SET username_penyewa='$username',password_penyewa='$password' WHERE nama_penyewa='$name'";
+        $sql = "UPDATE penyewa SET username='$username',password='$password' WHERE nama_penyewa='$name'";
         $result = mysqli_query($mysqli,$sql);
         if($result){
           echo "Data Berhasil Dimasukkan";

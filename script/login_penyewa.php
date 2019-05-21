@@ -49,7 +49,7 @@
                     if(isset($_POST['submit']) && !empty($_POST['username']) && !empty($_POST['password'])){
                       $user=$_POST['username'];
                       $pass=$_POST['password'];
-                      $sql = "SELECT * FROM penyewa WHERE username_penyewa='$user' AND password_penyewa='$pass' ";
+                      $sql = "SELECT * FROM penyewa WHERE username='$user' AND password='$pass' ";
                       $result = mysqli_query($mysqli,$sql);
                       $check=mysqli_num_rows($result);
                       if($check>0){
