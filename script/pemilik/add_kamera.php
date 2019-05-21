@@ -16,35 +16,41 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
-    <?php
-    include "koneksi.php";
+  <?php 
     session_start();
     if($_SESSION['user']==''){
       header("location:login_pemilik.php");
     }
+    include "koneksi.php";
     $id=$_SESSION["id_user"];
+    $sqlpemilik= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id'";
+    $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
+    $row=mysqli_fetch_array($resultpemilik);
     ?>
-
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand" href="index.php">
-            <img src="./gambar/tampilan/logo-putih.png" width="170" height="50" class="d-inline-block align-top" alt="">
-        </a>
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+    </button>
+    <a class="navbar-brand" href="index.php">
+      <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+    </a>
 
-        <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
       
     </form>
     </nav>
-    
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
-          <li class="nav-item">
-              <div class="profil" style="margin-left:27%;">
-                  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
-              </div>
-              <p style="color:white; text-align: center;">nama user</p>
+      <!--navbar search-->
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+            <div class="profil" style="margin-left:27%;">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/selfieKtp/<?php echo $row['gamselfie_pemilik']?>" width="100px;">
+            </div>
+              <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
           </li>
           
         <li class="nav-item active">
@@ -83,38 +89,38 @@
         <!-- Area Chart Example-->
         <form method="POST" enctype="multipart/form-data">
         <div class="card mb-3">
-              <div class="card-body">
-                    <div class="row">
-                      <div class="col-sm-12">
-                      <div class="form-inline" action="#">
-                  <div class="md-form">
-                      <label for="form3" class="" >Merk kamera</label>
-                      <input type="text" id="form3" class="form-control" name="merk" >
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form4" >Seri Kamera</label>
-                      <input type="text" id="form4" class="form-control" name="seri" >
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form7">Spesifikasi Kamera</label>
-                      <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"></textarea>
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form6">Kondisi Kamera</label>
-                      <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"></textarea>
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form5">Harga Sewa</label>
-                      <input type="text" id="form5" class="form-control" name="harga">
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form8">Status Kamera</label>
-                      <input type="text" id="form8" class="form-control" name="status">
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form9">Foto Kamera</label>
-                      <input type="file" name="gbrKam"/>
-                  </div><br>
+          <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-inline" action="#">
+                      <div class="md-form">
+                          <label for="form3" class="" >Merk kamera</label>
+                          <input type="text" id="form3" class="form-control" name="merk" >
+                      </div><br>
+                      <div class="md-form">
+                          <label for="form4" >Seri Kamera</label>
+                          <input type="text" id="form4" class="form-control" name="seri" >
+                      </div><br>
+                      <div class="md-form">
+                          <label for="form7">Spesifikasi Kamera</label>
+                          <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"></textarea>
+                      </div><br>
+                      <div class="md-form">
+                          <label for="form6">Kondisi Kamera</label>
+                          <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"></textarea>
+                      </div><br>
+                      <div class="md-form">
+                          <label for="form5">Harga Sewa</label>
+                          <input type="text" id="form5" class="form-control" name="harga">
+                      </div><br>
+                      <div class="md-form">
+                          <label for="form8">Status Kamera</label>
+                          <input type="text" id="form8" class="form-control" name="status">
+                      </div><br>
+                      <div class="md-form">
+                          <label for="form9">Foto Kamera</label>
+                          <input type="file" name="gbrKam"/>
+                      </div><br>
         <div class="text-center mt-4">
         <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>
         </div>

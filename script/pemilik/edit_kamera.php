@@ -16,27 +16,40 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
+  <?php 
+    session_start();
+    if($_SESSION['user']==''){
+      header("location:login_pemilik.php");
+    }
+    include "koneksi.php";
+    $id=$_SESSION["id_user"];
+    $sqlpemilik= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id'";
+    $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
+    $row=mysqli_fetch_array($resultpemilik);
+  ?>
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+    </button>
+    <a class="navbar-brand" href="index.php">
+      <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+    </a>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-        <a class="navbar-brand" href="index.php">
-            <img src="./gambar/tampilan/logo-putih.png" width="170" height="50" class="d-inline-block align-top" alt="">
-        </a>
-
-        <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-       
+      
     </form>
-    </nav>
-    
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
-          <li class="nav-item">
-              <div class="profil" style="margin-left:27%;">
-                  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
-              </div>
-              <p style="color:white; text-align: center;">nama user</p>
+  </nav>
+      <!--navbar search-->
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+            <div class="profil" style="margin-left:27%;">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/selfieKtp/<?php echo $row['gamselfie_pemilik']?>" width="100px;">
+            </div>
+              <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
           </li>
           
         <li class="nav-item active">
@@ -67,56 +80,82 @@
             <span>Log out</span></a>
         </li>
       </ul>
-
+    
     <div id="content-wrapper">
     <aside class="col-sm-10" style="margin-top:20px; background-color:#ffffff; margin-bottom:300px;">
-                    <div class="sidebar_widget">
-                        <div class="widget_heading">
-                        <h5><i class="fa fa-envelope" aria-hidden="true"></i>Edit data kamera</h5><br>
-                        </div>
-                        <form method="post">
-                        <div class="md-form">
-                      <label for="form3" class="" >Merk kamera</label>
-                      <input type="text" id="form3" class="form-control" name="merk" >
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form4" >Seri Kamera</label>
-                      <input type="text" id="form4" class="form-control" name="seri" >
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form7">Spesifikasi Kamera</label>
-                      <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"></textarea>
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form6">Kondisi Kamera</label>
-                      <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"></textarea>
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form5">Harga Sewa</label>
-                      <input type="text" id="form5" class="form-control" name="harga">
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form8">Status Kamera</label>
-                      <input type="text" id="form8" class="form-control" name="status">
-                  </div><br>
-                  <div class="md-form">
-                      <label for="form9">Foto Kamera</label>
-                      <input type="file" name="gbr-kamera">
-                  </div><br>
-                            <div class="form-group">
-                            <button type="submit" class="btn btn-dark"  name="submit" value="Book Now">Sewa </button>
-                            </div>
-                                
-                        </form>
-                    </div>
-                </aside>
+        <div class="sidebar_widget">
+            <div class="widget_heading">
+              <h5><i class="fa fa-envelope" aria-hidden="true"></i>Edit data kamera</h5><br>
+            </div>
+            <?php
+            $idkam=$_GET['id_kamera'];
+            $sqlgetkamera= "SELECT * FROM kamera WHERE id_kamera = '$idkam'";
+            $resultgetkamera = mysqli_query($mysqli,$sqlgetkamera);
+            $rows = mysqli_fetch_array($resultgetkamera);
+            ?>
+            <form method="POST"  enctype="multipart/form-data">
+              <div class="md-form">
+                <label for="form3" class="" >Merk kamera</label>
+                <input type="text" id="form3" class="form-control" name="merk" value="<?php echo $rows['merek_kamera'];?>" >
+              </div><br>
+              <div class="md-form">
+                  <label for="form4" >Seri Kamera</label>
+                  <input type="text" id="form4" class="form-control" name="seri" value="<?php echo $rows['seri_kamera'];?>">
+              </div><br>
+              <div class="md-form">
+                  <label for="form7">Spesifikasi Kamera</label>
+                  <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"><?php echo $rows['spesifikasi_kamera'];?></textarea>
+              </div><br>
+              <div class="md-form">
+                  <label for="form6">Kondisi Kamera</label>
+                  <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"><?php echo $rows['kondisi_kamera'];?></textarea>
+              </div><br>
+              <div class="md-form">
+                  <label for="form5">Harga Sewa</label>
+                  <input type="text" id="form5" class="form-control" name="harga" value="<?php echo $rows['harga_sewa'];?>">
+              </div><br>
+              <div class="md-form">
+                  <label for="form8">Status Kamera</label>
+                  <input type="text" id="form8" class="form-control" name="status" value="<?php echo $rows['status_kamera'];?>">
+              </div><br>
+              <div class="md-form">
+                  <label for="form9">Foto Kamera</label>
+                  <input type="file" name="gbrKamUpdate">
+              </div><br>
+              <div class="form-group">
+                <button type="submit" class="btn btn-dark"  name="update">Update Data</button>
+              </div>        
+            </form>
+        </div>
+    </aside>
 
   </div>
   <!-- /#wrapper -->
+  <?php
+    if(isset($_POST['update'])){
+      $idkamUpdate=$_GET['id_kamera'];
+      $merk = $_POST['merk'];
+      $seri = $_POST['seri'];
+      $spek = $_POST['spek'];
+      $kondisi = $_POST['kondisi'];
+      $harga = $_POST['harga'];
+      $status = $_POST['status'];
+      $filename = $_FILES['gbrKamUpdate']['name'];
+      $filetmp = $_FILES['gbrKamUpdate']['tmp_name'];
+      $filefolder = "../../gambar/kamera/".$filename;
+      move_uploaded_file($filetmp,$filefolder);
 
-
-
-
-    
+      $sqlupdatekamera = "UPDATE kamera SET merek_kamera='$merk',
+              seri_kamera='$seri',spesifikasi_kamera='$spek',kondisi_kamera='$kondisi'
+              ,harga_sewa='$harga',status_kamera='$status',gambar_kamera='$filename' WHERE id_kamera = '$idkamUpdate'";
+      $resultupdatekamera = mysqli_query($mysqli,$sqlupdatekamera);
+      if($resultupdatekamera){
+        echo "Data Berhasil Dimasukkan";
+      }else{
+        echo "Data Gagal Dimasukkan";
+        echo mysqli_errno($mysqli);
+      }
+    }
+  ?>    
 </body>
 </html>

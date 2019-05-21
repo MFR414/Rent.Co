@@ -23,31 +23,31 @@
 </head>
 
 <body id="page-top">
-<?php 
-  session_start();
-  if($_SESSION['user']==''){
-    header("location:login_pemilik.php");
-  }
-  include "koneksi.php";
-  $id=$_SESSION["id_user"];
-  $sqlpemilik= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id'";
-  $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
-  $row=mysqli_fetch_array($resultpemilik);
-  ?>
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <?php 
+    session_start();
+    if($_SESSION['user']==''){
+      header("location:login_pemilik.php");
+    }
+    include "koneksi.php";
+    $id=$_SESSION["id_user"];
+    $sqlpemilik= "SELECT * FROM pemilik_kamera WHERE id_pemilik = '$id'";
+    $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
+    $row=mysqli_fetch_array($resultpemilik);
+    ?>
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-    <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
-  </button>
-  <a class="navbar-brand" href="index.php">
-    <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
-  </a>
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+    </button>
+    <a class="navbar-brand" href="index.php">
+      <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+    </a>
 
-  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-    
-  </form>
-  </nav>
-    <!--navbar search-->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+      
+    </form>
+    </nav>
+      <!--navbar search-->
 
   <div id="wrapper">
 
@@ -144,7 +144,7 @@
                         <td><?php echo $rows['gambar_kamera']?></td>
                         <td>
                           <form action="edit_kamera.php" method="GET">
-                            <button type = "submit" class="btn-sm btn-success" name="submit" value="<?php echo $rows['id_kamera']?>"><strong>Edit</strong></button>
+                            <button type = "submit" class="btn-sm btn-success" name="id_kamera" value="<?php echo $rows['id_kamera']?>"><strong>Edit</strong></button>
                           </form>
                           <form action="delete-kamera.php" method="GET">
                             <button type = "submit" class="btn-sm btn-danger" name="submit" value="<?php echo $rows['id_kamera']?>"><strong>Delete</strong></button>
