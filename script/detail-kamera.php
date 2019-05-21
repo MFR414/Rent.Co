@@ -81,8 +81,8 @@
     <!-- ini ending navbar -->
 
     <?php
-        while($rows = mysqli_fetch_array($result))
-        {
+        /*while($rows = mysqli_fetch_array($result))
+        {*/
     ?>
 
     <!--ini info produk-->
@@ -100,10 +100,10 @@
                         <div class="detail">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                    <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Keterangan</a></button>
+                                    <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Keterangan</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Spesifikasi</a></button>
+                                    <button type="button" class="btn btn-outline-dark" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Spesifikasi</button>
                                 </li>
                             </ul>
 
@@ -127,7 +127,7 @@
                         
                     </div>
                     <?php            
-                        }
+                        /*}*/
                     ?>
                 </div>
                  <!--Side-Bar-->

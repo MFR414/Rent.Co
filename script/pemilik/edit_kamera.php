@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
         <a class="navbar-brand" href="index.php">
-            <img src="./gambar/tampilan/logo-item.png" width="170" height="50" class="d-inline-block align-top" alt="">
+            <img src="./gambar/tampilan/logo-putih.png" width="170" height="50" class="d-inline-block align-top" alt="">
         </a>
 
         <!-- Navbar Search -->
@@ -76,17 +76,13 @@
       </ul>
 
     <div id="content-wrapper">
-
-      <div class="container-fluid">
-
-        <!-- Area Chart Example-->
-        <form method="POST">
-        <div class="card mb-3">
-              <div class="card-body">
-                    <div class="row">
-                      <div class="col-sm-12">
-                      <div class="form-inline" action="#">
-                  <div class="md-form">
+    <aside class="col-sm-10" style="margin-top:20px; background-color:#ffffff; margin-bottom:300px;">
+                    <div class="sidebar_widget">
+                        <div class="widget_heading">
+                        <h5><i class="fa fa-envelope" aria-hidden="true"></i>Edit data kamera</h5><br>
+                        </div>
+                        <form method="post">
+                        <div class="md-form">
                       <label for="form3" class="" >Merk kamera</label>
                       <input type="text" id="form3" class="form-control" name="merk" >
                   </div><br>
@@ -114,17 +110,13 @@
                       <label for="form9">Foto Kamera</label>
                       <input type="file" name="gbr-kamera">
                   </div><br>
-        <div class="text-center mt-4">
-        <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </div>
-      </form>
-    </div>
-    <!-- /.content-wrapper -->
+                            <div class="form-group">
+                            <button type="submit" class="btn btn-dark"  name="submit" value="Book Now">Sewa </button>
+                            </div>
+                                
+                        </form>
+                    </div>
+                </aside>
 
   </div>
   <!-- /#wrapper -->
