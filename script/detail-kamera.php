@@ -134,22 +134,48 @@
                         <div class="widget_heading">
                         <h5><i class="fa fa-envelope" aria-hidden="true"></i>Sewa sekarang</h5><br>
                         </div>
-                        <form method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="fromdate" placeholder="Tanggal sewa(dd/mm/yyyy)" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="todate" placeholder="Tanggal kembali(dd/mm/yyyy)" required>
-                        </div>
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="form-group">
-                            <button type="submit" class="btn btn-dark"  name="submit" value="Book Now">Sewa </button>
-        </div>
-                                        
-        </form>
+                                <input type="date" class="form-control" name="fromdate" placeholder="Tanggal sewa" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control" name="todate" placeholder="Tanggal kembali" required>
+                            </div>
+                                <div class="form-group">
+                                <button type="submit" class="btn btn-dark"  name="sewa">Sewa </button>
+                            </div>                
+                        </form>
                     </div>
+                    <?php
+                    $row = mysqli_fetch_array($result);
+                    $namaPemilik = $row['nama_pemilik']; 
+                    $namaPenyewa = $_SESSION['nama'];
+                    $emailPenyewa = $_SESSION['email_penyewa'];
+                    $noTelpPenyewa = $_SESSION['notelp_penyewa'];
+                    $noKtpPenyewa = $_SESSION['noktp_penyewa'];
+                    $idKam=$_GET['submit'];
+                    if(isset($_POST['sewa'])){
+                        $tanggalMulai = htmlentities($_POST['fromdate']);
+                        $tanggalSelesai = htmlentities($_POST['todate']);
+                        $sqlTransaksi="INSERT INTO daftar_sewa SET nama_penyewa = '$namaPenyewa',id_kam='$idKam',
+                                    email_penyewa = '$emailPenyewa',notelp_penyewa='$noTelpPenyewa',
+                                    noktp_penyewa='$noKtpPenyewa',nama_pemilik='$namaPemilik',
+                                    tanggal_mulai_sewa='$tanggalMulai,tanggal_selesai_sewa='$tanggalSelesai'";
+                        $resultTransaksi = mysqli_query($mysqli,$sqlTransaksi);
+                        if($resultTransaksi){
+                          $message = "Data Berhasil Dimasukkan";
+                          echo "<script type='text/javascript'>alert('$message');</script>";
+                        }else{
+                          $message = "Data Gagal Dimasukkan";
+                          echo "<script type='text/javascript'>alert('$message');</script>";
+                          echo mysqli_errno($mysqli);
+                        }   
+                    }
+                    ?>
                 </aside>
     <!--/Side-Bar--> 
         </div>
-        <?php include 'footer.php'; ?>
+        <?php include 'footer.php';
+        ?>
 </body>
 </html>

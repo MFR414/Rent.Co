@@ -56,6 +56,8 @@
                         $row=mysqli_fetch_array($result);
                         $_SESSION["id_penyewa"] = $row['id_penyewa'];
                         $_SESSION["user"] = $row['username'];
+                        
+                        $_SESSION["nama"] = $row['nama_penyewa'];                        
                         $_SESSION["email_penyewa"]= $row['email_penyewa'];
                         $_SESSION["notelp_penyewa"]= $row['notelp_penyewa'];
                         $_SESSION["noktp_penyewa"]= $row['noktp_penyewa'];

@@ -153,7 +153,11 @@
               ,harga_sewa='$harga',status_kamera='$status',gambar_kamera='$filename'";
       $result = mysqli_query($mysqli,$sql);
       if($result){
-        echo "Data Berhasil Dimasukkan";
+        $message = "Tambah Kamera Succesfull";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+      }else{
+        $message = "Tambah Kamera Unsuccesfull";
+        echo "<script type='text/javascript'>alert('$message');</script>";
       }
     }
   ?>
