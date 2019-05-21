@@ -2,8 +2,9 @@ body{
 		background: linear-gradient(90deg, #e8e8e8 50%, #3d009e 50%);
 	}
 	.portfolio{
-		padding:6%;
+		padding:5%;
 		text-align:center;
+		
 	}
 	.heading{
 		background: #fff;

@@ -39,7 +39,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.php"><img src="./gambar/logo-3-negatif.png" width="170" height="50" alt="Homepage"></a>
+            <a class="site-logo" href="index.php"><img src="./gambar/logo-putih.png" width="170" height="50" alt="Homepage"></a>
         </div>
 
         <nav class="header-nav-wrap">
@@ -338,7 +338,7 @@
             <div class="col-full">
 
                 <div class="footer-logo">
-                    <a class="footer-site-logo" href="#0"><img src="./gambar/logo-3-negatif.png" alt="Homepage"></a>
+                    <a class="footer-site-logo" href="#0"><img src="./gambar/logo-putih.png" alt="Homepage"></a>
                 </div>
 
                 <ul class="footer-social">
