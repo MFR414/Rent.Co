@@ -89,28 +89,16 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></a>
                 <span class="navbar-toggler-icon"></span>
-            </button>
-           <!-- <div class="search-bar">
-                <div class="input-group mb-3">
-                <form action="#">
-                    <input type="text" class="form-control" style="width: 920px !important;" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" >
-                </form>     
-                    <a class="btn btn-outline-dark" type="button" href="#">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </a>-->
-                         
-                    <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white; font-size:18;">
-                        <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello user!
-                        </div>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                            <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
-                            <a class="dropdown-item" href="logout.php">Keluar</a>
-                        </div>
-                    </div>
+            </button>                         
+            <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white; font-size:18;">
+                <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hello user!
                 </div>
-            </div>    
-        
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                    <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
+                    <a class="dropdown-item" href="logout.php">Keluar</a>
+                </div>
+            </div>
     </nav>
 
     <div class="carousel">

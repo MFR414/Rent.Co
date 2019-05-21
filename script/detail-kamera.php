@@ -81,8 +81,8 @@
     <!-- ini ending navbar -->
 
     <?php
-        /*while($rows = mysqli_fetch_array($result))
-        {*/
+        while($rows = mysqli_fetch_array($result))
+        {
     ?>
 
     <!--ini info produk-->
@@ -122,12 +122,10 @@
                             role="tab" aria-controls="pills-profile" aria-selected="false">Hubungi Ke Whatsapp</a>
                             
                             <a type="submit" class="btn btn-outline-dark" href="main-page.php" 
-                             style="margin-left:240px; margin-top: 10px;">Kembali</a>
-                            
-                        
+                             style="margin-left:240px; margin-top: 10px;">Kembali</a>                  
                     </div>
                     <?php            
-                        /*}*/
+                        }
                     ?>
                 </div>
                  <!--Side-Bar-->
