@@ -167,9 +167,14 @@
 <!-- carousel-->
     <div class= "container">
         <div class="row">
+<<<<<<< HEAD
         <?php //$all_items = array_chunk($my_array,3); ?>
             <div class="card" style="width:200px;">
                 <img class="card-img-top" src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>.jpg" alt="Card image">
+=======
+            <div class="card" style="width:200px">
+                <img class="card-img-top" src="../gambar/kamera/<?php echo $rows['gambar_kamera']?>" alt="Card image">
+>>>>>>> 1798a34ade91badcb07494aa06fe02163673ece9
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $rows['merek_kamera']?> <?php echo $rows['seri_kamera']?></h4>
                         <form action="detail-kamera.php" method="GET">

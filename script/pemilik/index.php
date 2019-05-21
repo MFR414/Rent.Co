@@ -35,7 +35,11 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+<<<<<<< HEAD
   <!--<i class="fas fa-bars"></i>--> <img src="../../gambar/logo-putih.png" width="100" height="30" class="d-inline-block align-top" alt="">
+=======
+  <!--<i class="fas fa-bars"></i>--> <img src="../../gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+>>>>>>> 1798a34ade91badcb07494aa06fe02163673ece9
 </button>
 <a class="navbar-brand" href="index.php">
   <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
@@ -61,7 +65,7 @@
     <ul class="sidebar navbar-nav">
         <li class="nav-item">
             <div class="profil" style="margin-left:27%;">
-                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/tampilan/ig-warna.png" width="100px;">
             </div>
             <p style="color:white; text-align: center;"><?php echo $_SESSION['user']?></p>
         </li>

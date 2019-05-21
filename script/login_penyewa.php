@@ -29,7 +29,7 @@
               <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Masuk sekarang! </h1>
               <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; background-color:white;">
               <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Dan temukan kamera pilihan anda dengan merk yang bervariasi.</h6>
-              <a class="tulisan" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Belum punya akun? <a href="#" style="color:white;">Klik disini!</a></a><br><br>
+              <a class="tulisan" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Belum punya akun? <a href="register1_penyewa.php" style="color:white;">Klik disini!</a></a><br><br>
               <a button class="btn btn-outline-light" href="../index.php" style="color:white">Kembali</a>
             </div>
             <!--Grid column-->
@@ -49,12 +49,15 @@
                     if(isset($_POST['submit']) && !empty($_POST['username']) && !empty($_POST['password'])){
                       $user=$_POST['username'];
                       $pass=$_POST['password'];
-                      $sql = "SELECT * FROM penyewa WHERE username='$user' AND password='$pass' ";
+                      $sql = "SELECT * FROM penyewa WHERE username_penyewa='$user' AND password_penyewa='$pass' ";
                       $result = mysqli_query($mysqli,$sql);
                       $check=mysqli_num_rows($result);
                       if($check>0){
                         $row=mysqli_fetch_array($result);
                         $_SESSION["user"] = $row['username'];
+                        $_SESSION["email_penyewa"]= $row['email_penyewa'];
+                        $_SESSION["notelp_penyewa"]= $row['notelp_penyewa'];
+                        $_SESSION["noktp_penyewa"]= $row['noktp_penyewa'];
                         header("location:main-page.php");
                       }else{
                         header("location:login_penyewa.php");
@@ -72,15 +75,6 @@
                     <label for="form4" style="color:white;">Password</label>
                     <input type="password" id="form4" class="white-text form-control" name="password" style=" color:white; background-color:rgba(255,255,255,0);">
                   </div><br>
-                  <!--<p style="color:white;">Masuk sebagai :</p>
-                  <div class="sel sel--black-panther">
-                        <select name="select-profession" id="select-profession" style=" background-color:rgba(255,255,255,0.1); color:white;" >
-                            <option value="" disabled style="color:black;">--Pilih--</option>
-                            <option value="pemilik" style="color:black;">Pemilik kamera</option>
-                            <option value="penyewa" style="color:black;">Penyewa kamera</option>
-                            <option value="admin" style="color:black;">Admin</option>
-                        </select>
-                    </div>-->
                   <div class="text-center mt-4">
                     <button class="btn btn-dark waves-effect waves-light" style="color:white;" name="submit">Login</button>
                   </div>
