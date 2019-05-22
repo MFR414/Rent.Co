@@ -21,7 +21,13 @@
   <link href="css/sb-admin.css" rel="stylesheet">
 
 </head>
-
+  <?php 
+      session_start();
+      if($_SESSION['nama']==''){
+        header("location:login_admin.php");
+      }
+      $user = $_SESSION['nama'];
+  ?>
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -51,10 +57,11 @@
     <ul class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw">Admin</i>
+          <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Log out</a>
+          <a class="dropdown-item" href="#">Hi, <?php echo $user?></a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
         </div>
       </li>
     </ul>
@@ -116,22 +123,40 @@
               <div class="col-sm-12">
                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   <thead>
-                     <tr><th rowspan="1" colspan="1">Nama</th>
-                      <th rowspan="1" colspan="1">ID Pemilik</th>
+                  <tr><th rowspan="1" colspan="1">Id Rekap</th>
+                      <th rowspan="1" colspan="1">Nama Penyewa</th>
                       <th rowspan="1" colspan="1">Email</th>
                       <th rowspan="1" colspan="1">No Telp</th>
-                      <th rowspan="1" colspan="1">No KTP</th>
+                      <th rowspan="1" colspan="1">No Ktp</th>
+                      <th rowspan="1" colspan="1">Id Kamera</th>
+                      <th rowspan="1" colspan="1">Nama Pemilik</th>
+                      <th rowspan="1" colspan="1">Tanggal sewa</th>
+                      <th rowspan="1" colspan="1">Tanggal kembali</th>
+                      <th rowspan="1" colspan="1">Konfirmasi</th>
                     </thead>
-                    </tfoot>
+                    <?php
+                      include "koneksi.php";
+                      $sql= "SELECT * FROM rekap_sewa";
+                      $result = mysqli_query($mysqli,$sql);
+                      while($rows = mysqli_fetch_array($result))
+                        {
+                    ?>
                     <tbody>
                     <tr role="row" class="odd">
-                        <td class="sorting_1"><?php //echo $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
-                        <td><?php // $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
+                        <td class="sorting_1"><?php echo $rows['id_rekap'];?></td>
+                        <td><?php echo $rows['nama_penyewa'];?></td>
+                        <td><?php echo $rows['email_penyewa'];?></td>
+                        <td><?php echo $rows['notelp_penyewa'];?></td>
+                        <td><?php echo $rows['noktp_penyewa'];?></td>
+                        <td><?php echo $rows['id_kam'];?></td>
+                        <td><?php echo $rows['nama_pemilik'];?></td>
+                        <td><?php echo $rows['tanggal_mulai_sewa'];?></td>
+                        <td><?php echo $rows['tanggal_selesai_sewa'];?></td>
                     </tr> 
                     </tbody>
+                    <?php
+                      }
+                    ?>
                   </table>
                 </div>
               </div>

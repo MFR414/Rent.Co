@@ -90,7 +90,7 @@
               <div class="col-sm-12">
                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   <thead>
-                     <tr><th rowspan="1" colspan="1">No</th>
+                     <tr><th rowspan="1" colspan="1">Id Sewa</th>
                       <th rowspan="1" colspan="1">Nama Penyewa</th>
                       <th rowspan="1" colspan="1">Email</th>
                       <th rowspan="1" colspan="1">No Telp</th>
@@ -111,27 +111,65 @@
                     ?>
                     <tbody>
                     <tr role="row" class="odd">
-                        <td class="sorting_1"><?php echo $rows['id_daftarsewa']?></td>
-                        <td><?php echo $rows['nama_penyewa']?></td>
-                        <td><?php echo $rows['email_penyewa']?></td>
-                        <td><?php echo $rows['notelp_penyewa']?></td>
-                        <td><?php echo $rows['noktp_penyewa']?></td>
-                        <td><?php echo $rows['id_kam']?></td>
-                        <td><?php echo $rows['nama_pemilik']?></td>
-                        <td><?php echo $rows['tanggal_mulai_sewa']?></td>
-                        <td><?php echo $rows['tanggal_selesai_sewa']?></td>
+                        <td class="sorting_1"><?php echo $rows['id_daftarsewa'];?></td>
+                        <td><?php echo $rows['nama_penyewa'];?></td>
+                        <td><?php echo $rows['email_penyewa'];?></td>
+                        <td><?php echo $rows['notelp_penyewa'];?></td>
+                        <td><?php echo $rows['noktp_penyewa'];?></td>
+                        <td><?php echo $rows['id_kam'];?></td>
+                        <td><?php echo $rows['nama_pemilik'];?></td>
+                        <td><?php echo $rows['tanggal_mulai_sewa'];?></td>
+                        <td><?php echo $rows['tanggal_selesai_sewa'];?></td>
                         <td>
                           <form method="POST">
+                            <input type="hidden" name="idSewa" id="actionResult" value="<?php echo $rows['id_daftarsewa']; ?>"/>
                             <button type = "submit" class="btn-sm btn-success" name="Yes" ><strong>Ya</strong></button>
                           </form>
                           <form method="POST">
+                            <input type="hidden" name="idSewa" id="actionResult" value="<?php echo $rows['id_daftarsewa']; ?>"/>
                             <button type = "submit" class="btn-sm btn-danger" name="No" ><strong>Tidak</strong></button>
                           </form>
                         </td>
                       </tr>                    
                     </tbody>
-                    <?php
-                      }
+                    <?php 
+                        $namaPenyewa = $rows['nama_penyewa'];
+                        $emailPenyewa = $rows['email_penyewa'];
+                        $notelpPenyewa = $rows['notelp_penyewa'];
+                        $noktpPenyewa = $rows['noktp_penyewa'];
+                        $idKam = $rows['id_kam'];
+                        $namaPemilik = $rows['nama_pemilik'];
+                        $tanggalMulai = $rows['tanggal_mulai_sewa'];
+                        $tanggalSelesai = $rows['tanggal_selesai_sewa'];
+                        }
+                        if(isset($_POST['Yes'])){
+                          $idTransaksi = $_POST['idSewa'];
+                          $sqlBackup="INSERT INTO rekap_sewa (id_rekap,id_kam,nama_penyewa,email_penyewa,notelp_penyewa,noktp_penyewa,nama_pemilik,
+                                      tanggal_mulai_sewa,tanggal_selesai_sewa) VALUES ('$idTransaksi','$idKam','$namaPenyewa','$emailPenyewa','$notelpPenyewa','$noktpPenyewa'
+                                      ,'$namaPemilik','$tanggalMulai','$tanggalSelesai')";
+                          $resultBackup = mysqli_query($mysqli,$sqlBackup);
+                          if($resultBackup){
+                            $message = "Terimakasih atas konfirmasinya,Data Tercatat dalam Sistem";
+                            echo "<script type='text/javascript'>alert('$message');</script>";
+                            $sqlDeleteAfterInput="DELETE FROM daftar_sewa WHERE id_daftarsewa='$idTransaksi'";
+                            $resultDeleteAfterInput= mysqli_query($mysqli,$sqlDeleteAfterInput);
+                          }else{
+                            $message = "Data Gagal Di Update";
+                            echo "<script type='text/javascript'>alert('$message');</script>";
+                          } 
+                        }
+                        else if(isset($_POST['No'])){
+                          $sqlDelete="DELETE FROM daftar_sewa WHERE id_daftarsewa='$idTransaksi'";
+                          $resultDelete= mysqli_query($mysqli,$sqlDelete);
+                          if($resultDelete){
+                            $message = "Terimakasih atas konfirmasinya,Data Terhapus dalam Sistem";
+                            echo "<script type='text/javascript'>alert('$message');</script>";
+                            echo '<script>window.location="index.php"</script>';
+                          }else{
+                            $message = "Data Gagal Di Hapus";
+                            echo "<script type='text/javascript'>alert('$message');</script>";
+                          }
+                        }
                     ?>
                   </table>
                 </div>
