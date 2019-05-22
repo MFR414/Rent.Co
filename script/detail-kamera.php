@@ -150,7 +150,7 @@
                         </form>
                     </div>
                     <?php
-                    $namaPenyewa = $_SESSION['nama'];
+                    /*$namaPenyewa = $_SESSION['nama'];
                     $emailPenyewa = $_SESSION['email_penyewa'];
                     $noTelpPenyewa = $_SESSION['notelp_penyewa'];
                     $noKtpPenyewa = $_SESSION['noktp_penyewa'];
@@ -172,7 +172,7 @@
                           echo "<script type='text/javascript'>alert('$message');</script>";
                           echo mysqli_errno($mysqli);
                         }   
-                    }
+                    }*/
                     ?>
                 </aside>
     <!--/Side-Bar--> 
