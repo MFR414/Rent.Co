@@ -70,8 +70,8 @@
                             Hello user!
                         </div>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Lihat profil</button>
-                            <button class="dropdown-item" type="button">Keluar</button>
+                            <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
+                            <a class="dropdown-item" href="logout.php">Keluar</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,8 @@
                             <a type="submit" class="btn btn-outline-dark" href="main-page.php" 
                              style="margin-left:240px; margin-top: 10px;">Kembali</a>                  
                     </div>
-                    <?php            
+                    <?php
+                        $namaPemilik = $rows['nama_pemilik'];
                         }
                     ?>
                 </div>
@@ -147,8 +148,6 @@
                         </form>
                     </div>
                     <?php
-                    $row = mysqli_fetch_array($result);
-                    $namaPemilik = $row['nama_pemilik']; 
                     $namaPenyewa = $_SESSION['nama'];
                     $emailPenyewa = $_SESSION['email_penyewa'];
                     $noTelpPenyewa = $_SESSION['notelp_penyewa'];
@@ -157,14 +156,15 @@
                     if(isset($_POST['sewa'])){
                         $tanggalMulai = htmlentities($_POST['fromdate']);
                         $tanggalSelesai = htmlentities($_POST['todate']);
-                        $sqlTransaksi="INSERT INTO daftar_sewa SET nama_penyewa = '$namaPenyewa',id_kam='$idKam',
-                                    email_penyewa = '$emailPenyewa',notelp_penyewa='$noTelpPenyewa',
-                                    noktp_penyewa='$noKtpPenyewa',nama_pemilik='$namaPemilik',
-                                    tanggal_mulai_sewa='$tanggalMulai,tanggal_selesai_sewa='$tanggalSelesai'";
+                        $sqlTransaksi="INSERT INTO daftar_sewa(id_kam, nama_penyewa, email_penyewa, notelp_penyewa,noktp_penyewa,nama_pemilik,
+                                        tanggal_mulai_sewa,tanggal_selesai_sewa,konfirmasi_pemilik) 
+                                        VALUES('$idKam','$namaPenyewa','$emailPenyewa','$noTelpPenyewa','$noKtpPenyewa','$namaPemilik','$tanggalMulai','$tanggalSelesai',
+                                        'No')";
                         $resultTransaksi = mysqli_query($mysqli,$sqlTransaksi);
                         if($resultTransaksi){
                           $message = "Data Berhasil Dimasukkan";
                           echo "<script type='text/javascript'>alert('$message');</script>";
+                          
                         }else{
                           $message = "Data Gagal Dimasukkan";
                           echo "<script type='text/javascript'>alert('$message');</script>";

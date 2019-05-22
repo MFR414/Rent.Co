@@ -56,6 +56,7 @@
                         $row=mysqli_fetch_array($result);
                         $_SESSION["user"] = $row['username'];
                         $_SESSION["id_user"] = $row['id_pemilik'];
+                        $_SESSION["nama_user"] = $row['nama_pemilik'];
                         header("location:index.php");
                       }else{
                         $message = "Login Unsuccesfull";

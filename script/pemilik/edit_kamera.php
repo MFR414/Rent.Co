@@ -150,7 +150,6 @@
               ,harga_sewa='$harga',status_kamera='$status',gambar_kamera='$filename' WHERE id_kamera = '$idkamUpdate'";
       $resultupdatekamera = mysqli_query($mysqli,$sqlupdatekamera);
       if($resultupdatekamera){
-        echo "Data Berhasil Dimasukkan";
         echo '<script>window.location="listkamera.php"</script>';
       }else{
         echo "Data Gagal Dimasukkan";

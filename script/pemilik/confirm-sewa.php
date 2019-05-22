@@ -16,34 +16,40 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
+  <?php 
+    session_start();
+    if($_SESSION['user']==''){
+      header("location:login_pemilik.php");
+    }
+    include "koneksi.php";
+    $id=$_SESSION["id_user"];
+    $sqlpemilik= "SELECT gamselfie_pemilik FROM pemilik_kamera WHERE id_pemilik = '$id'";
+    $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
+    $row=mysqli_fetch_array($resultpemilik);
+  ?>
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+    </button>
+    <a class="navbar-brand" href="index.php">
+      <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+    </a>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+      
+    </form>
+  </nav>
+      <!--navbar search-->
 
-        <a class="navbar-brand" href="index.php">
-            <img src="./gambar/tampilan/logo-3-negatif.png" width="170" height="50" class="d-inline-block align-top" alt="">
-        </a>
+  <div id="wrapper">
 
-        <!-- Navbar Search -->
-        <!--<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+            <div class="profil" style="margin-left:27%;">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambarPemilik/selfieKtp/<?php echo $row['gamselfie_pemilik']?>" width="100px;">
             </div>
-        </form>-->
-    </nav>
-    
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
-          <li class="nav-item">
-              <div class="profil" style="margin-left:27%;">
-                  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./gambar/tampilan/ig-warna.png" width="100px;">
-              </div>
-              <p style="color:white; text-align: center;">nama user</p>
+              <p style="color:white; text-align: center;"><?php echo $_SESSION['user']; mysqli_close($mysqli)?></p>
           </li>
           
         <li class="nav-item active">
@@ -88,24 +94,52 @@
                       <th rowspan="1" colspan="1">Nama Penyewa</th>
                       <th rowspan="1" colspan="1">Email</th>
                       <th rowspan="1" colspan="1">No Telp</th>
-                      <th rowspan="1" colspan="1">Kamera yang disewa</th>
+                      <th rowspan="1" colspan="1">No Ktp</th>
+                      <th rowspan="1" colspan="1">Id Kamera</th>
+                      <th rowspan="1" colspan="1">Nama Pemilik</th>
                       <th rowspan="1" colspan="1">Tanggal sewa</th>
                       <th rowspan="1" colspan="1">Tanggal kembali</th>
-                      <th rowspan="1" colspan="1"></th>
+                      <th rowspan="1" colspan="1">Konfirmasi</th>
                     </thead>
-                    </tfoot>
+                    <?php
+                      include "koneksi.php";
+                      $nama=$_SESSION["nama_user"];
+                      $sql= "SELECT * FROM daftar_sewa WHERE nama_pemilik = '$nama' ";
+                      $result = mysqli_query($mysqli,$sql);
+                      while($rows = mysqli_fetch_array($result))
+                        {
+                    ?>
                     <tbody>
                     <tr role="row" class="odd">
-                        <td class="sorting_1"><?php //echo $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
-                        <td><?php // $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
-                        <td><?php //echo $rows['']?></td>
-                        <td><?php // $rows['']?></td>
-                        <td><button class="btn btn-success">Konfirmasi</button></td>
-                    </tr> 
+                        <td class="sorting_1"><?php echo $rows['id_daftarsewa']?></td>
+                        <td><?php echo $rows['nama_penyewa']?></td>
+                        <td><?php echo $rows['email_penyewa']?></td>
+                        <td><?php echo $rows['notelp_penyewa']?></td>
+                        <td><?php echo $rows['noktp_penyewa']?></td>
+                        <td><?php echo $rows['id_kam']?></td>
+                        <td><?php echo $rows['nama_pemilik']?></td>
+                        <td><?php echo $rows['tanggal_mulai_sewa']?></td>
+                        <td><?php echo $rows['tanggal_selesai_sewa']?></td>
+                        <td>
+                          <form method="POST">
+                            <button type = "submit" class="btn-sm btn-success" name="Yes" ><strong>Ya</strong></button>
+                          </form>
+                          <form method="POST">
+                            <button type = "submit" class="btn-sm btn-danger" name="No" ><strong>Tidak</strong></button>
+                          </form>
+                        </td>
+                      </tr>                    
                     </tbody>
+                    <?php
+                        $idTransaksi = $rows['id_daftarsewa'];
+                        }
+                        if(isset($_POST['Yes'])){
+                          $sqlUpdate="UPDATE daftar_sewa SET konfirmasi_pemilik = 'Yes'";
+                          $sqlInsert="INSERT INTO rekap_data (id_rekap,nama_penyewa,email_penyewa,
+                          notelp_penyewa,noktp_penyewa,nama_pemilik,tanggal_mulai_sewa,tanggal_selesai_sewa) VALUES 
+                          () ";
+                        }
+                    ?>
                   </table>
                 </div>
               </div>
@@ -121,8 +155,6 @@
             </div>
           </div>
         </div>
-        <?php //} ?>
-
   </div>
   <!-- /#wrapper -->
 </body>

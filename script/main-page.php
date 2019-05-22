@@ -92,7 +92,7 @@
             </button>                         
             <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white; font-size:18;">
                 <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Hello user!
+                    Hello <?php echo $_SESSION['nama']?>
                 </div>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                     <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>

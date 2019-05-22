@@ -126,7 +126,6 @@
                       </tr>
                     </thead>
                     <?php
-                      include "koneksi.php";
                       $id=$_SESSION["id_user"];
                       $sql= "SELECT * FROM kamera WHERE id_pemilik = '$id' ";
                       $result = mysqli_query($mysqli,$sql);

@@ -58,7 +58,7 @@
               <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Daftar sekarang! </h1>
               <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; background-color:white;">
               <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s; color:white;">Bergabunglah bersama kami dan temukan kamera pilihan anda dengan merk yang bervariasi.</h6><br>
-              <a button class="btn btn-outline-light" href="../../index.php" style="color:white">Kembali</a>
+              <a button class="btn btn-outline-light" href="../index.php" style="color:white">Kembali</a>
             </div>
             <!--Grid column-->
             <!--Grid column-->
