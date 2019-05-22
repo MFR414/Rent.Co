@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rent.Co - Penyewaan kamera</title>
+    <title>Rent.Co - Tambah kamera</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -14,6 +14,9 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./gambarPemilik/tampilan/rentco.png" type="image/x-icon">
+    <link rel="icon" href="./gambarPemilik/tampilan/rentco.png" type="image/x-icon">
 </head>
 <body>
   <?php 
@@ -27,19 +30,20 @@
     $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
     $row=mysqli_fetch_array($resultpemilik);
     ?>
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
-    </button>
-    <a class="navbar-brand" href="index.php">
-      <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
-    </a>
+<button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+  <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/tampilan/logo-putih.png" width="100" height="30" class="d-inline-block align-top" alt="">
+</button>
+<a class="navbar-brand" href="index.php">
+  <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+</a>
 
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-      
-    </form>
-    </nav>
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+  
+</form>
+</nav>
       <!--navbar search-->
 
   <div id="wrapper">
@@ -83,53 +87,57 @@
       </ul>
 
     <div id="content-wrapper">
+    <aside class="col-sm-10" style="margin-top:20px; background-color:#ffffff; margin-bottom:300px;">
+        <div class="sidebar_widget">
+            <div class="widget_heading">
+              <h5><i class="fa fa-plus-square" aria-hidden="true"></i> Tambah data kamera</h5><br>
+            </div>
+              <form method="POST"  enctype="multipart/form-data">
+                    <div class="md-form">
+                      <label for="form3" class="" >Merk kamera</label>
+                      <input type="text" id="form3" class="form-control" name="merk">
+                    </div><br>
+                    <div class="md-form">
+                        <label for="form4" >Seri Kamera</label>
+                        <input type="text" id="form4" class="form-control" name="seri">
+                    </div><br>
+                    <div class="md-form">
+                        <label for="form7">Spesifikasi Kamera</label>
+                        <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"></textarea>
+                    </div><br>
+                    <div class="md-form">
+                        <label for="form6">Kondisi Kamera</label>
+                        <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"></textarea>
+                    </div><br>
+                    <div class="md-form">
+                        <label for="form5">Harga Sewa</label>
+                        <input type="text" id="form5" class="form-control" name="harga">
+                    </div><br>
+                    <div class="md-form">
+                        <label for="form8">Status Kamera</label>
+                        <input type="text" id="form8" class="form-control" name="status">
+                    </div><br>
+                    <div class="md-form">
+                        <label for="form9">Foto Kamera</label>
+                        <input type="file" name="gbrKamUpdate">
+                    </div><br>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-dark"  name="update">Tambah Data</button>
+                    </div>        
+              </form>
+          </div>
+      </aside>
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Rent.co 2019</span>
+          </div>
+        </div>
+      </footer>
 
-      <div class="container-fluid">
-
-        <!-- Area Chart Example-->
-        <form method="POST" enctype="multipart/form-data">
-        <div class="card mb-3">
-          <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="form-inline" action="#">
-                      <div class="md-form">
-                          <label for="form3" class="" >Merk kamera</label>
-                          <input type="text" id="form3" class="form-control" name="merk" >
-                      </div><br>
-                      <div class="md-form">
-                          <label for="form4" >Seri Kamera</label>
-                          <input type="text" id="form4" class="form-control" name="seri" >
-                      </div><br>
-                      <div class="md-form">
-                          <label for="form7">Spesifikasi Kamera</label>
-                          <textarea class="form-control" id="SpekTextArea" rows="3" name="spek"></textarea>
-                      </div><br>
-                      <div class="md-form">
-                          <label for="form6">Kondisi Kamera</label>
-                          <textarea class="form-control" id="kondisiTextArea" rows="3" name="kondisi"></textarea>
-                      </div><br>
-                      <div class="md-form">
-                          <label for="form5">Harga Sewa</label>
-                          <input type="text" id="form5" class="form-control" name="harga">
-                      </div><br>
-                      <div class="md-form">
-                          <label for="form8">Status Kamera</label>
-                          <input type="text" id="form8" class="form-control" name="status">
-                      </div><br>
-                      <div class="md-form">
-                          <label for="form9">Foto Kamera</label>
-                          <input type="file" name="gbrKam"/>
-                      </div><br>
-        <div class="text-center mt-4">
-        <button class="btn btn-dark waves-effect waves-light" name="simpan" type="submit">Simpan</button>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </div>
-      </form>
+    </div>
+    <!-- /.content-wrapper -->
     </div>
     <!-- /.content-wrapper -->
 
