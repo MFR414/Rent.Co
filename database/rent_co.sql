@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 04:42 AM
+-- Generation Time: May 22, 2019 at 04:16 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -45,9 +45,10 @@ CREATE TABLE `kamera` (
 --
 
 INSERT INTO `kamera` (`id_kamera`, `id_pemilik`, `merek_kamera`, `seri_kamera`, `spesifikasi_kamera`, `kondisi_kamera`, `harga_sewa`, `gambar_kamera`, `status_kamera`) VALUES
-(1, 1, 'Canon', 'EOS 5D Mark IV', '30.4MP Full-Frame CMOS Sensor, DIGIC 6+ Image Processor, 3.2 1.62m-Dot Touchscreen LCD Monitor,', 'Kondisi barang mulus tanpa lecet', '100.000', 'kamera-1.jpg', 'Tersedia'),
-(2, 1, 'Nikon', 'D5100', 'Sensor: CMOS DX 16 MP,\r\nISO normal 100-6400, bisa dinaikkan ke ISO 25600,\r\nfull HD movie 1080p, 30 f', 'Kondisi Barang Agak Lecet, fungsi normal', '40.000', 'kamera-2.jpg', 'Tidak Tersedia'),
-(3, 1, 'Canon', '600D', 'Warna Hitam, Resolusi 18MP', 'Mulus dan terawat', '50.000', 'Canon_EOS_600D.jpg', 'Tersedia');
+(1, 2, 'Canon', 'EOS 5D Mark IV', '30.4MP Full-Frame CMOS Sensor, DIGIC 6+ Image Processor, 3.2 1.62m-Dot Touchscreen LCD Monitor,', 'Kondisi barang mulus tanpa lecet', '100.000', 'kamera-1.jpg', 'Tersedia'),
+(2, 2, 'Nikon', 'D5100', 'Sensor: CMOS DX 16 MP,\r\nISO normal 100-6400, bisa dinaikkan ke ISO 25600,\r\nfull HD movie 1080p, 30 f', 'Kondisi Barang Agak Lecet, fungsi normal', '40.000', 'kamera-2.jpg', 'Tidak Tersedia'),
+(3, 2, 'Canon', '600D', 'Warna Hitam, Resolusi 18MP', 'Mulus dan terawat', '50.000', 'Canon_EOS_600D.jpg', 'Tersedia'),
+(5, 2, 'Nikon', 'D5200', 'Warna Hitam,Resolusi 18 MP,\r\nLayar bisa flip ke depan', 'Mulus terawat', '50.000', 'Nikon-D5200-KIT-AF-S-18-55mm-VR-h.jpg', 'Tersedia');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,6 @@ CREATE TABLE `pemilik_kamera` (
 --
 
 INSERT INTO `pemilik_kamera` (`username`, `password`, `id_pemilik`, `nama_pemilik`, `email_pemilik`, `notelp_pemilik`, `noktp_pemilik`, `gamktp_pemilik`, `gamselfie_pemilik`) VALUES
-('mfr414', 'mfr414', 1, 'Muhammad Firmansyah Rifai', 'gameswarriorz.mfr@gmail.com', '628125247841', '3507141604980001', '', ''),
 ('reef16', 'reef', 2, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'IMG20190520230647.jpg', 'IMG20190520230735.jpg');
 
 -- --------------------------------------------------------
@@ -98,8 +98,7 @@ CREATE TABLE `penyewa` (
 --
 
 INSERT INTO `penyewa` (`username`, `password`, `id_penyewa`, `nama_penyewa`, `email_penyewa`, `notelp_penyewa`, `noktp_penyewa`, `gamktp_penyewa`, `gamselfie_penyewa`) VALUES
-('mfr414', 'mfr414', 3, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'IMG20190520230647.jpg', 'IMG20190520230735.jpg'),
-('kiki98', 'kiki', 4, 'Fauziah Rizky', 'kiki.fauziah@gmail.com', '6282337734028', '5455612156151', '1e3af69c4296931c365e9b527323cacc.png', '5a2fcb9e3700d4.9524253015130817582253.png');
+('mfr414', 'mfr414', 3, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'IMG20190520230647.jpg', 'IMG20190520230735.jpg');
 
 --
 -- Indexes for dumped tables
@@ -132,19 +131,19 @@ ALTER TABLE `penyewa`
 -- AUTO_INCREMENT for table `kamera`
 --
 ALTER TABLE `kamera`
-  MODIFY `id_kamera` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kamera` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pemilik_kamera`
 --
 ALTER TABLE `pemilik_kamera`
-  MODIFY `id_pemilik` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pemilik` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `penyewa`
 --
 ALTER TABLE `penyewa`
-  MODIFY `id_penyewa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_penyewa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
