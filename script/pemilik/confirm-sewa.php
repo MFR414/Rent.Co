@@ -132,6 +132,9 @@
                     </tbody>
                     <?php
                         $idTransaksi = $rows['id_daftarsewa'];
+                        $namaPenyewa = $rows['nama_penyewa'];
+                        $emailPenyewa = $rows['email_penyewa'];
+                        $emailPenyewa = $rows['notel_penyewa'];
                         }
                         if(isset($_POST['Yes'])){
                           $sqlUpdate="UPDATE daftar_sewa SET konfirmasi_pemilik = 'Yes'";
