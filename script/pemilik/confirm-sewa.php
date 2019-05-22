@@ -84,7 +84,7 @@
       <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Tabel Rekap data penyewaan</div>
+            Tabel Konfirmasi Penyewaan</div>
           <div class="card-body">
             <div class="row">
               <div class="col-sm-12">
@@ -131,17 +131,7 @@
                       </tr>                    
                     </tbody>
                     <?php
-                        $idTransaksi = $rows['id_daftarsewa'];
-                        $namaPenyewa = $rows['nama_penyewa'];
-                        $emailPenyewa = $rows['email_penyewa'];
-                        $emailPenyewa = $rows['notel_penyewa'];
-                        }
-                        if(isset($_POST['Yes'])){
-                          $sqlUpdate="UPDATE daftar_sewa SET konfirmasi_pemilik = 'Yes'";
-                          $sqlInsert="INSERT INTO rekap_data (id_rekap,nama_penyewa,email_penyewa,
-                          notelp_penyewa,noktp_penyewa,nama_pemilik,tanggal_mulai_sewa,tanggal_selesai_sewa) VALUES 
-                          () ";
-                        }
+                      }
                     ?>
                   </table>
                 </div>
