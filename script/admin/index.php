@@ -24,11 +24,11 @@
 
 <body id="page-top">
   <?php 
-  /*session_start();
+  session_start();
   if($_SESSION['nama']==''){
     header("location:login_admin.php");
   }
-  $user = $_SESSION['nama'];*/
+  $user = $_SESSION['nama'];
   ?>
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 

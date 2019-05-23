@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Bulan Mei 2019 pada 16.49
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.3.1
+-- Generation Time: May 22, 2019 at 04:16 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,55 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
---
-
-CREATE TABLE `admin` (
-  `user_admin` varchar(50) NOT NULL,
-  `pass_admin` varchar(50) NOT NULL,
-  `id_admin` int(200) NOT NULL,
-  `nama_admin` varchar(50) NOT NULL,
-  `email_admin` varchar(50) NOT NULL,
-  `notelp_admin` varchar(50) NOT NULL,
-  `jabatan_admin` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `admin`
---
-
-INSERT INTO `admin` (`user_admin`, `pass_admin`, `id_admin`, `nama_admin`, `email_admin`, `notelp_admin`, `jabatan_admin`) VALUES
-('sysadmin', '1234', 1, 'Fauziah Rizky', 'kiki.fauziah@gmail.com', '081555476301', 'System Administrator');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `daftar_sewa`
---
-
-CREATE TABLE `daftar_sewa` (
-  `id_daftarsewa` int(100) NOT NULL,
-  `id_kam` int(11) NOT NULL,
-  `nama_penyewa` varchar(100) NOT NULL,
-  `email_penyewa` varchar(50) NOT NULL,
-  `notelp_penyewa` varchar(50) NOT NULL,
-  `noktp_penyewa` varchar(50) NOT NULL,
-  `nama_pemilik` varchar(100) NOT NULL,
-  `tanggal_mulai_sewa` date NOT NULL,
-  `tanggal_selesai_sewa` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `daftar_sewa`
---
-
-INSERT INTO `daftar_sewa` (`id_daftarsewa`, `id_kam`, `nama_penyewa`, `email_penyewa`, `notelp_penyewa`, `noktp_penyewa`, `nama_pemilik`, `tanggal_mulai_sewa`, `tanggal_selesai_sewa`) VALUES
-(9, 2, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'Muhammad Firmansyah', '2019-05-23', '2019-05-24');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `kamera`
+-- Table structure for table `kamera`
 --
 
 CREATE TABLE `kamera` (
@@ -89,7 +41,7 @@ CREATE TABLE `kamera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kamera`
+-- Dumping data for table `kamera`
 --
 
 INSERT INTO `kamera` (`id_kamera`, `id_pemilik`, `merek_kamera`, `seri_kamera`, `spesifikasi_kamera`, `kondisi_kamera`, `harga_sewa`, `gambar_kamera`, `status_kamera`) VALUES
@@ -101,7 +53,7 @@ INSERT INTO `kamera` (`id_kamera`, `id_pemilik`, `merek_kamera`, `seri_kamera`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pemilik_kamera`
+-- Table structure for table `pemilik_kamera`
 --
 
 CREATE TABLE `pemilik_kamera` (
@@ -117,7 +69,7 @@ CREATE TABLE `pemilik_kamera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pemilik_kamera`
+-- Dumping data for table `pemilik_kamera`
 --
 
 INSERT INTO `pemilik_kamera` (`username`, `password`, `id_pemilik`, `nama_pemilik`, `email_pemilik`, `notelp_pemilik`, `noktp_pemilik`, `gamktp_pemilik`, `gamselfie_pemilik`) VALUES
@@ -126,7 +78,7 @@ INSERT INTO `pemilik_kamera` (`username`, `password`, `id_pemilik`, `nama_pemili
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penyewa`
+-- Table structure for table `penyewa`
 --
 
 CREATE TABLE `penyewa` (
@@ -142,128 +94,63 @@ CREATE TABLE `penyewa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `penyewa`
+-- Dumping data for table `penyewa`
 --
 
 INSERT INTO `penyewa` (`username`, `password`, `id_penyewa`, `nama_penyewa`, `email_penyewa`, `notelp_penyewa`, `noktp_penyewa`, `gamktp_penyewa`, `gamselfie_penyewa`) VALUES
 ('mfr414', 'mfr414', 3, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'IMG20190520230647.jpg', 'IMG20190520230735.jpg');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `rekap_sewa`
---
-
-CREATE TABLE `rekap_sewa` (
-  `id_rekap` int(50) NOT NULL,
-  `id_kam` int(11) NOT NULL,
-  `nama_penyewa` varchar(100) NOT NULL,
-  `email_penyewa` varchar(50) NOT NULL,
-  `notelp_penyewa` varchar(50) NOT NULL,
-  `noktp_penyewa` varchar(50) NOT NULL,
-  `nama_pemilik` varchar(100) NOT NULL,
-  `tanggal_mulai_sewa` date NOT NULL,
-  `tanggal_selesai_sewa` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `rekap_sewa`
---
-
-INSERT INTO `rekap_sewa` (`id_rekap`, `id_kam`, `nama_penyewa`, `email_penyewa`, `notelp_penyewa`, `noktp_penyewa`, `nama_pemilik`, `tanggal_mulai_sewa`, `tanggal_selesai_sewa`) VALUES
-(4, 2, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'Muhammad Firmansyah', '2019-05-23', '2019-05-24'),
-(5, 2, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'Muhammad Firmansyah', '2019-05-23', '2019-05-24'),
-(7, 2, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'Muhammad Firmansyah', '2019-05-23', '2019-05-24'),
-(8, 2, 'Muhammad Firmansyah', 'firmansyahm9@gmail.com', '6281333152944', '3507141604990001', 'Muhammad Firmansyah', '2019-05-23', '2019-05-24');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
-
---
--- Indeks untuk tabel `daftar_sewa`
---
-ALTER TABLE `daftar_sewa`
-  ADD PRIMARY KEY (`id_daftarsewa`),
-  ADD KEY `fk_kamera_daftarsewa` (`id_kam`);
-
---
--- Indeks untuk tabel `kamera`
+-- Indexes for table `kamera`
 --
 ALTER TABLE `kamera`
   ADD PRIMARY KEY (`id_kamera`),
   ADD KEY `fk_kamera_pemilik` (`id_pemilik`);
 
 --
--- Indeks untuk tabel `pemilik_kamera`
+-- Indexes for table `pemilik_kamera`
 --
 ALTER TABLE `pemilik_kamera`
   ADD PRIMARY KEY (`id_pemilik`);
 
 --
--- Indeks untuk tabel `penyewa`
+-- Indexes for table `penyewa`
 --
 ALTER TABLE `penyewa`
   ADD PRIMARY KEY (`id_penyewa`);
 
 --
--- Indeks untuk tabel `rekap_sewa`
---
-ALTER TABLE `rekap_sewa`
-  ADD PRIMARY KEY (`id_rekap`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT untuk tabel `daftar_sewa`
---
-ALTER TABLE `daftar_sewa`
-  MODIFY `id_daftarsewa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT untuk tabel `kamera`
+-- AUTO_INCREMENT for table `kamera`
 --
 ALTER TABLE `kamera`
   MODIFY `id_kamera` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `pemilik_kamera`
+-- AUTO_INCREMENT for table `pemilik_kamera`
 --
 ALTER TABLE `pemilik_kamera`
   MODIFY `id_pemilik` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `penyewa`
+-- AUTO_INCREMENT for table `penyewa`
 --
 ALTER TABLE `penyewa`
   MODIFY `id_penyewa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `daftar_sewa`
---
-ALTER TABLE `daftar_sewa`
-  ADD CONSTRAINT `fk_kamera_daftarsewa` FOREIGN KEY (`id_kam`) REFERENCES `kamera` (`id_kamera`);
-
---
--- Ketidakleluasaan untuk tabel `kamera`
+-- Constraints for table `kamera`
 --
 ALTER TABLE `kamera`
   ADD CONSTRAINT `fk_kamera_pemilik` FOREIGN KEY (`id_pemilik`) REFERENCES `pemilik_kamera` (`id_pemilik`);

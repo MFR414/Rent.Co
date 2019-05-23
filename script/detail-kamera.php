@@ -67,7 +67,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="color:white;">
                         <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello user!
+                            Hello <?php echo $_SESSION['nama']?>
                         </div>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                             <a class="dropdown-item" href="profile_penyewa.php">Lihat profil</a>
@@ -118,8 +118,8 @@
                             </div>
                         </div>
                         
-                            <a type="button" class="btn btn-success" data-toggle="pill" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F" 
-                            role="tab" aria-controls="pills-profile" aria-selected="false">Hubungi Ke Whatsapp</a>
+                            <a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F" 
+                            >Hubungi Ke Whatsapp</a>
                             
                             <a type="button" class="btn btn-outline-dark" href="main-page.php" 
                              style="margin-left:240px; margin-top: 10px;">Kembali</a>                  
@@ -159,9 +159,8 @@
                         $tanggalMulai = htmlentities($_POST['fromdate']);
                         $tanggalSelesai = htmlentities($_POST['todate']);
                         $sqlTransaksi="INSERT INTO daftar_sewa(id_kam, nama_penyewa, email_penyewa, notelp_penyewa,noktp_penyewa,nama_pemilik,
-                                        tanggal_mulai_sewa,tanggal_selesai_sewa,konfirmasi_pemilik) 
-                                        VALUES('$idKam','$namaPenyewa','$emailPenyewa','$noTelpPenyewa','$noKtpPenyewa','$namaPemilik','$tanggalMulai','$tanggalSelesai',
-                                        'No')";
+                                        tanggal_mulai_sewa,tanggal_selesai_sewa) 
+                                        VALUES('$idKam','$namaPenyewa','$emailPenyewa','$noTelpPenyewa','$noKtpPenyewa','$namaPemilik','$tanggalMulai','$tanggalSelesai')";
                         $resultTransaksi = mysqli_query($mysqli,$sqlTransaksi);
                         if($resultTransaksi){
                           $message = "Data Berhasil Dimasukkan";
