@@ -14,6 +14,9 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./gambarPemilik/tampilan/rentco.png" type="image/x-icon">
+    <link rel="icon" href="./gambarPemilik/tampilan/rentco.png" type="image/x-icon">
 </head>
 <body>
   <?php 
@@ -27,18 +30,20 @@
     $resultpemilik = mysqli_query($mysqli,$sqlpemilik);
     $row=mysqli_fetch_array($resultpemilik);
   ?>
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
-    </button>
-    <a class="navbar-brand" href="index.php">
-      <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
-    </a>
+  
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
-      
-    </form>
-  </nav>
+<button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+  <!--<i class="fas fa-bars"></i>--> <img src="./gambarPemilik/tampilan/logo-putih.png" width="100" height="30" class="d-inline-block align-top" alt="">
+</button>
+<a class="navbar-brand" href="index.php">
+  <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
+</a>
+
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" width="800px">
+  
+</form>
+</nav>
       <!--navbar search-->
 
   <div id="wrapper">

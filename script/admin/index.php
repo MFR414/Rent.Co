@@ -33,7 +33,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <!--<i class="fas fa-bars"></i>--> <img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">
+      <!--<i class="fas fa-bars"></i>--> <img src="../../gambar/logo-putih.png" width="100" height="30" class="d-inline-block align-top" alt="">
     </button>
     <a class="navbar-brand" href="index.php">
       <!--<img src="../../gambar/logo-3-negatif.png" width="100" height="30" class="d-inline-block align-top" alt="">-->
@@ -119,7 +119,7 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-shopping-cart"></i>
                 </div>
-                <div class="mr-5">(jumlah) Transaksi sewa </div>
+                <div class="mr-5">Transaksi sewa </div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="rekap_data.php">
                 <span class="float-left">Detail</span>
@@ -135,7 +135,7 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
-                <div class="mr-5">(jumlah) Penyewa kamera</div>
+                <div class="mr-5">Penyewa kamera</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="penyewa.php">
                 <span class="float-left">Detail</span>
@@ -151,7 +151,7 @@
                 <div class="card-body-icon">
                   <i class="fas fa-child"></i>
                 </div>
-                <div class="mr-5">(jumlah) Pemilik kamera</div>
+                <div class="mr-5">Pemilik kamera</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="pemilik.php">
                 <span class="float-left">Detail</span>
@@ -167,7 +167,7 @@
                 <div class="card-body-icon">
                   <i class="fas fa-camera-retro"></i>
                 </div>
-                <div class="mr-5">(jumlah) Kamera</div>
+                <div class="mr-5">Kamera</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="kamera.php">
                 <span class="float-left">Details</span>

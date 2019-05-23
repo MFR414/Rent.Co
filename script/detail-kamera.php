@@ -121,7 +121,7 @@
                             <a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=<?php echo $rows['notelp_pemilik']?>&text=halo%20saya%20ingin%20meminjam%20kamera%20anda%2C%20apakah%20kita%20bisa%20bertemu%3F" 
                             >Hubungi Ke Whatsapp</a>
                             
-                            <a type="submit" class="btn btn-outline-dark" href="main-page.php" 
+                            <a type="button" class="btn btn-outline-dark" href="main-page.php" 
                              style="margin-left:240px; margin-top: 10px;">Kembali</a>                  
                     </div>
                     <?php
@@ -137,9 +137,11 @@
                         </div>
                         <form method="POST" enctype="multipart/form-data">
                             <div class="form-group">
+                            <h6>Tanggal sewa</h6><br>
                                 <input type="date" class="form-control" name="fromdate" placeholder="Tanggal sewa" required>
                             </div>
                             <div class="form-group">
+                                <h6>Tanggal kembali</h6><br>
                                 <input type="date" class="form-control" name="todate" placeholder="Tanggal kembali" required>
                             </div>
                                 <div class="form-group">
@@ -148,7 +150,7 @@
                         </form>
                     </div>
                     <?php
-                    $namaPenyewa = $_SESSION['nama'];
+                    /*$namaPenyewa = $_SESSION['nama'];
                     $emailPenyewa = $_SESSION['email_penyewa'];
                     $noTelpPenyewa = $_SESSION['notelp_penyewa'];
                     $noKtpPenyewa = $_SESSION['noktp_penyewa'];
@@ -169,7 +171,7 @@
                           echo "<script type='text/javascript'>alert('$message');</script>";
                           echo mysqli_errno($mysqli);
                         }   
-                    }
+                    }*/
                     ?>
                 </aside>
     <!--/Side-Bar--> 

@@ -8,8 +8,8 @@
     <!--css-->
     <link href="css/profile.css" rel="stylesheet">
     <!--icon-->
-    <link rel="shortcut icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
-    <link rel="icon" href="../gambar/icon-fix/rentco.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./gambarPemilik/tampilan/rentco.png" type="image/x-icon">
+    <link rel="icon" href="./gambarPemilik/tampilan/rentco.png" type="image/x-icon">
 
 </head>
 <?php
@@ -55,7 +55,8 @@
                                 <h6>foto KTP</h6>
                             </div>
                         </div>
-                        <a href="index.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
+                        <!--<a type="button" class="btn btn-dark" role="button" aria-pressed="true" href="index.php">Back</a>-->
+                        <a type = "submit" class="btn-md btn-danger" name="submit" href="index.php"><strong>Kembali</strong></a>
                     </div>
                 </div>
                 <?php } ?>
