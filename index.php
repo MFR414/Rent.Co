@@ -143,10 +143,19 @@
                     <div class="timeline__block">
                         <div class="timeline__bullet"></div>
                         <div class="timeline__header">
-                            <h3>Pilih Kategori</h3>
+                            <h3>Temukan kamera</h3>
                         </div>
                         <div class="timeline__desc">	
-                            <p>Pilih kategori barang yang akan anda sewa</p>
+                            <p>Cari pilih kamera yang akan ada sewa</p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Hubungi pemilik kamera</h3>
+                        </div>
+                        <div class="timeline__desc">	
+                            <p>Hubungi melalui link whatsapp</p>
                         </div>
                     </div> <!-- end timeline__block -->
 
@@ -159,20 +168,29 @@
                     <div class="timeline__block">
                         <div class="timeline__bullet"></div>
                         <div class="timeline__header">
-                            <h3>Lihat Barang</h3>
+                            <h3>Buat pesanan sewa</h3>
                         </div>
                         <div class="timeline__desc">
-                            <p>Klik tombol info pada produk, pastikan barang tersebut sesuai dengan kebutuhan anda</p>
+                            <p>Masukkan tanggal sewa dan tanggal kembali yang telah anda tentukan</p>
                         </div>
                     </div> <!-- end timeline__block -->
 
                     <div class="timeline__block">
                         <div class="timeline__bullet"></div>
                         <div class="timeline__header">
-                            <h3>Hubungi Penyewa</h3>
+                            <h3>Temui pemilik kamera</h3>
                         </div>
                         <div class="timeline__desc">
-                            <p>Klik button hubungi via Whatsapp, dan lakukan transaksi dengan penyewa</p>
+                            <p>Temui dan cek kondisi kamera secara menyeluruh</p>
+                        </div>
+                    </div> <!-- end timeline__block -->
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>Gunakan Kamera</h3>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>Dan abadikan momen berhargamu</p>
                         </div>
                     </div> <!-- end timeline__block -->
 

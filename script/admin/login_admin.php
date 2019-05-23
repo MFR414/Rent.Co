@@ -17,7 +17,7 @@
   <!-- Main navigation -->
   <header>  
     <!-- Full Page Intro -->
-    <div class="view" style="background-image: url('./gambar/tampilan/10-edit.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="view" style="background-image: url('./gambar/tampilan/10-edit.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; height:692px;">
       <!-- Mask & flexbox options-->
       <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
         <!-- Content -->
