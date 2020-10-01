@@ -8,4 +8,4 @@ This Project was updated on 8 May 2019
 - Connecting Pemilik Page To Database
 
 ### About Project
-This Project are Camera Rent app using Apache And MySQL from XAMPP Aplication Package
+This Project are Camera Rent app using Apache And MySQL from XAMPP Aplication Package with native web
